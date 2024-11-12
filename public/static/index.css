@@ -1,4 +1,4 @@
-/* Reset de base */
+/* Thème sombre avec accents de couleur */
 * {
     box-sizing: border-box;
     margin: 0;
@@ -9,77 +9,87 @@ body {
     display: flex;
     flex-direction: row;
     height: 100vh;
-    overflow: hidden; /* Empêche la page entière de défiler */
+    overflow: hidden;
+    background-color: #1e1e1e;
+    color: #d4d4d4;
+    font-family: Arial, sans-serif;
 }
 
-/* Section About Me (fixe et collée à gauche) */
 .about_me {
     display: flex;
     flex-direction: column;
     position: fixed;
     top: 0;
-    left: 0; /* Colle la div à gauche */
-    width: 250px; /* Largeur fixe pour la div */
+    left: 0;
+    width: 250px;
     height: 100%;
     padding: 20px;
-    background-color: #f8f8f8; /* Couleur de fond pour différencier */
+    background-color: #252526;
+    color: #d4d4d4;
     z-index: 1;
-    overflow-y: auto; /* Permettre le défilement au cas où la div dépasse en hauteur */
+    overflow-y: auto;
 }
 
-/* Section Infos (scrollable) */
 .container {
     display: flex;
     flex-direction: column;
-    margin-left: 250px; /* Correspond à la largeur de .about_me */
-    width: calc(100% - 250px); /* Prendre la largeur restante */
-    overflow-y: auto; /* Permettre le défilement de .infos */
+    margin-left: 250px;
+    width: calc(100% - 250px);
+    overflow-y: auto;
     padding: 20px;
+    background-color: #1e1e1e;
 }
 
 .infos {
     display: flex;
     flex-direction: column;
     width: 100%;
-    height: 100%; /* Assure que .infos prend toute la hauteur disponible */
+    height: 100%;
 }
 
-/* Présentation */
-.presentation {
-    border-radius: 15px;
-    text-align: justify;
-    margin-bottom: 20px;
-}
-
-.presentation h2 {
-    border-bottom: 1px solid gray;
+.presentation h2, .projects h2, .hobbies h3 {
+    color: #61dafb;
+    border-bottom: 1px solid #3c3c3c;
     padding-bottom: 10px;
+    margin-bottom: 15px;
 }
 
-/* Technologies Stack */
 .techno_stack {
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
     justify-content: start;
+    margin-top: 15px;
 }
 
 .techno_stack > div {
     margin: 10px;
     display: flex;
-    flex-direction: row;
     align-items: center;
     text-align: center;
     padding: 8px;
-    background-color: rgba(128, 128, 128, 0.3);
-    border-radius: 15px;
+    background-color: #333;
+    border-radius: 10px;
+    color: #d4d4d4;
 }
 
-.project {
-    margin: 20px;
+.project, .hobbies_list > div {
+    margin: 20px 0;
+    background-color: #333;
+    border-radius: 10px;
+    padding: 10px;
+    color: #d4d4d4;
 }
 
-/* Responsive pour mobiles */
+a {
+    color: #61dafb;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
 @media (max-width: 768px) {
     .about_me {
         width: 100%;
