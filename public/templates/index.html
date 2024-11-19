@@ -1,46 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="robots" content="noindex">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link id="linkcss" rel="stylesheet" href="/public/static/index.css" type="text/css">
-    <link href="/public/doc/fonts/Rubik/static/Rubik-Bold.ttf" rel="stylesheet">
+    <!-- <link href="/public/doc/fonts/Rubik/static/Rubik-SemiBold.ttf" rel="stylesheet"> -->
     <title>Axelle Fouquemberg - Portfolio</title>
 </head>
+
 <body>
+
+    <!-- Modal d'affichage du CV -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="fermerModal()">x</span>
+            <embed src="/public/doc/Axelle Fouquemberg .pdf#page=1&view=FitH" width="100%" height="100%" type="application/pdf">
+            <!-- <iframe id="pdfViewer" src="" width="100%" height="100%" style="display: none;"></iframe> -->
+        </div>
+    </div>
     <div class="background"></div>
     <div class="container">
         <!--Div fixe-->
         <div class="about_me">
-            <img src="/public/img/home/photo.JPG" alt="image" id="profile_pic"/>
+            <img src="/public/img/home/photo.JPG" alt="image" id="profile_pic" />
             <h1>Axelle</h1>
             <h1>FOUQUEMBERG</h1>
             <h3>Développeuse Full-Stack (en formation)</h3>
             <div id="div_links">
                 <div>Liens utiles :</div>
                 <a href="https://github.com/HumanWonder">
-                    <img src="/public/img/home/GitHub-Logo.png" alt="GITHUB" width="40"/>
+                    <img src="/public/img/home/GitHub-Logo.png" alt="GITHUB" width="40" />
                 </a>
-                <br>
                 <a href="https://www.linkedin.com/in/axelle-fouquemberg" alt="LinkedIn">
-                    <img src="/public/img/home/linkedin-logo-linkedin-logo-transparent-linkedin-icon-transparent-free-free-png.webp" alt="LinkedIn" width="40"/>
+                    <img src="/public/img/home/linkedin-logo-linkedin-logo-transparent-linkedin-icon-transparent-free-free-png.webp"
+                        alt="LinkedIn" width="40" />
                 </a>
-                <br>
                 <a href="https://zone01rouennormandie.org" alt="Zone01">
-                    <img src="/public/img/home/zone01_rouen_normandie_logo.jpeg" alt="Zone01" width="40"/>
+                    <img src="/public/img/home/zone01_rouen_normandie_logo.jpeg" alt="Zone01" width="40" />
                 </a>
-                <br>
-                <a href="/public/doc/Axelle Fouquemberg .pdf">Consultez mon CV</a>
+                <a class="mail-cv" onclick="ouvrirModal()">Consulter mon CV</a>
             </div>
         </div>
 
         <!--Partie droite: présentation et infos/projets-->
         <div class="infos">
             <div class="presentation">
-                <h2>Bienvenue !</h2>
+                <h1>Bienvenue !</h1>
                 <p>
-                    Curieuse, motivée et en apprentissage constant, je suis en reconversion vers le développement full-stack après un parcours en études littéraires. J'aborde le code comme une série d'énigmes à résoudre, ce qui stimule ma créativité et mon sens de la logique. Autodidacte et toujours prête à relever de nouveaux défis, je suis à la recherche d'opportunités pour évoluer dans un environnement dynamique et innovant, où je pourrai mettre à profit mes compétences tout en continuant à apprendre et à m'adapter.
+                    Curieuse, motivée et en apprentissage constant, je suis en reconversion vers le développement
+                    full-stack après un parcours en études littéraires. J'aborde le code comme une série d'énigmes à
+                    résoudre, ce qui stimule ma créativité et mon sens de la logique. Autodidacte et toujours prête à
+                    relever de nouveaux défis, je suis à la recherche d'opportunités pour évoluer dans un environnement
+                    dynamique et innovant, où je pourrai mettre à profit mes compétences tout en continuant à apprendre
+                    et à m'adapter.
                 </p>
                 <h2>TECHNOLOGIES</h2>
                 <div class="techno_stack">
@@ -53,7 +67,8 @@
                         <div>&nbsp;Javascript</div>
                     </div>
                     <div>
-                        <img src="/public/img/home/Rust_programming_language_black_logo.svg.png" alt="logo rust" width="30">
+                        <img src="/public/img/home/Rust_programming_language_black_logo.svg.png" alt="logo rust"
+                            width="30">
                         <div>&nbsp;Rust</div>
                     </div>
                     <div>
@@ -86,7 +101,7 @@
                 <!-- Projet 2 -->
                 <div class="project">
                     <div class="project_description">
-                        <h4>Forum</h4>
+                        <h4>Groupie-tracker</h4>
                         <p>Langages utilisés : Golang</p>
                     </div>
                     <div class="project_link">
@@ -103,6 +118,18 @@
                         <a href="/projet3">Détail &#x2794;</a>
                     </div>
                 </div>
+                <!-- Projet 4 -->
+                <div class="project">
+                    <div class="project_description">
+                        <h4>Go-Reloaded</h4>
+                        <p>Parce qu'il est important de voir d'où on est parti, voici le premier projet de la formation
+                            !</p>
+                        <p>Langages utilisés : Golang</p>
+                    </div>
+                    <div class="project_link">
+                        <a href="/projet4">Détail &#x2794;</a>
+                    </div>
+                </div>
             </div>
 
             <div class="hobbies">
@@ -111,16 +138,52 @@
                 <div class="hobbies_list">
                     <div>
                         <a href="/hobby1">Jeux Vidéos</a>
-                    </div> 
+                    </div>
                     <div>
                         <a href="/hobby2">Dessin</a>
-                    </div> 
+                    </div>
                     <div>
                         <a href="/hobby3">Crochet/Tricot</a>
-                    </div> 
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 </body>
+
 </html>
+<script>
+    // Fonction pour ouvrir le modal
+    function ouvrirModal() {
+        console.log("Modal OUVERT");
+        // const iframe = document.getElementById("pdfViewer");
+
+        // iframe.src = "/public/doc/Axelle Fouquemberg .pdf#page=1&view=FitH";
+        // iframe.style.display = "block";
+         // Injecter dynamiquement l'embed
+    if (!document.getElementById("pdfViewer")) {
+        const embed = document.createElement("embed");
+        embed.id = "pdfViewer";
+        embed.src = "/public/doc/Axelle Fouquemberg .pdf#page=1&view=FitH";
+        embed.width = "100%";
+        embed.height = "100%";
+        embed.type = "application/pdf";
+        modal.querySelector(".modal-content").appendChild(embed);
+    }
+        document.getElementById("modal").style.display = "flex";
+    }
+
+    // Fonction pour fermer le modal
+    function fermerModal() {
+        console.log("Modal FERME");
+        // const iframe = document.getElementById("pdfViewer");
+
+        // iframe.src = ""; // Réinitialiser la source pour éviter un rechargement intempestif
+        // iframe.style.display = "none";
+        const embed = document.getElementById("pdfViewer");
+        if (embed) {
+            embed.remove();
+        }
+        document.getElementById("modal").style.display = "none";
+    }
+</script>
