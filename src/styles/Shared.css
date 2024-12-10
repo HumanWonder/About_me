@@ -1,0 +1,33 @@
+.page-grid {
+    display: grid;
+    grid-template-rows: auto 1fr;
+    width: 80%;
+    margin: auto;
+  }
+  
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #007bff;
+    color: white;
+    padding: 1rem;
+  }
+  
+  nav h1 {
+    margin: 0;
+  }
+  
+  .content {
+    padding: 2rem;
+  }
+  
+  .content ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .content li {
+    padding: 0.5rem 0;
+  }
+  

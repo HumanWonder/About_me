@@ -1,0 +1,43 @@
+body {
+  font-family: "Arial", sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f9f9f9;
+}
+
+.app-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+.page-content {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  transition: transform 0.5s ease-in-out;  /* Transition du glissement */
+}
+
+.slide-enter {
+  transform: translateX(100%);  /* Démarrer la transition depuis la droite */
+}
+
+.slide-enter-active {
+  transform: translateX(0);  /* Fin de la transition avec la page en place */
+}
+
+.slide-exit {
+  transform: translateX(0);  /* La page commence à sa position initiale */
+}
+
+.slide-exit-active {
+  transform: translateX(-100%);  /* La page glisse vers la gauche */
+}
+
+.slide-enter-done {
+  transform: translateX(0);  /* Fin de la transition avec la page en place */
+}
