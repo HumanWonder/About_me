@@ -5,7 +5,7 @@ const Projects = ({ setPage }) => {
   return (
     <div className="page-grid">
       <nav>
-        <button onClick={() => setPage("home")}>Retour</button>
+        {/* <button onClick={() => setPage("home")}>Retour</button> */}
         <h1>Projets</h1>
       </nav>
       <div className="content">

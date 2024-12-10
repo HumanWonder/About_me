@@ -1,3 +1,5 @@
+/* color: #e27d60*/
+
 .page-grid {
     display: grid;
     grid-template-rows: auto 1fr;
@@ -21,25 +23,27 @@
   color: #e27d60; /* Pastel accent */
 }
 
-.nav-links {
+/* .navbar {
   list-style: none;
   display: flex;
   gap: 1.5rem;
-}
+} */
 
-.nav-links li {
+.navbar button {
+  justify-content: flex-end;
+  gap: 1rem;
   cursor: pointer;
   font-size: 1rem;
-  color: #333;
+  color: #000000;
   transition: color 0.3s;
 }
 
-.nav-links li:hover {
-  color: #e27d60;
+.navbar button:hover {
+  color: #000000;
 }
   
   .content {
-    padding: 2rem;
+    padding: 1rem;
   }
   
   .content ul {
@@ -50,4 +54,22 @@
   .content li {
     padding: 0.5rem 0;
   }
+  .buttons {
+    grid-area: buttons;
+    display: flex;
+    gap: 1rem;
+  }
   
+  button {
+    padding: 0.7rem 1.2rem;
+    border: none;
+    background-color: #e27d60;
+    color: white;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.1s ease;
+  }
+  
+  button:hover {
+    background-color: #eeb2a1;
+  }
