@@ -4,36 +4,8 @@
     "intro avatar"
     "buttons avatar";
   grid-template-columns: 1fr 1fr;
-  grid-gap: 2rem;
+  grid-gap: 1rem;
   width: 80%;
   margin: auto;
 }
-
-.intro {
-  grid-area: intro;
-}
-
-.intro h1 {
-  font-size: 2.5rem;
-  color: #444;
-}
-
-.intro p span {
-  color: #007bff;
-  font-weight: bold;
-}
-
-/* .avatar {
-  grid-area: avatar;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.avatar-circle {
-  width: 150px;
-  height: 150px;
-  background-color: #cce7ff;
-  border-radius: 50%;
-} */
 

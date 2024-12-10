@@ -1,5 +1,4 @@
 /* color: #e27d60*/
-
 .page-grid {
     display: grid;
     grid-template-rows: auto 1fr;
@@ -22,54 +21,20 @@
   font-weight: bold;
   color: #e27d60; /* Pastel accent */
 }
-
-/* .navbar {
-  list-style: none;
-  display: flex;
-  gap: 1.5rem;
-} */
-
-.navbar button {
-  justify-content: flex-end;
-  gap: 1rem;
+.navbar-buttons button {
+  padding: 0.7rem 1.2rem;
+  border: none;
+  background-color: #e27d60;
+  color: white;
+  border-radius: 10px;
   cursor: pointer;
-  font-size: 1rem;
-  color: #000000;
-  transition: color 0.3s;
+  transition: all 0.3s ease;
 }
 
-.navbar button:hover {
-  color: #000000;
+.navbar-buttons button:hover {
+  transform: scale(1.1); /* Agrandit légèrement au survol */
+  background-color: #eeb2a1; /* Change la couleur */
+  color:rgb(185, 72, 72);
+  font-weight: bolder;
 }
-  
-  .content {
-    padding: 1rem;
-  }
-  
-  .content ul {
-    list-style-type: none;
-    padding: 0;
-  }
-  
-  .content li {
-    padding: 0.5rem 0;
-  }
-  .buttons {
-    grid-area: buttons;
-    display: flex;
-    gap: 1rem;
-  }
-  
-  button {
-    padding: 0.7rem 1.2rem;
-    border: none;
-    background-color: #e27d60;
-    color: white;
-    border-radius: 10px;
-    cursor: pointer;
-    transition: background-color 0.1s ease;
-  }
-  
-  button:hover {
-    background-color: #eeb2a1;
-  }
+

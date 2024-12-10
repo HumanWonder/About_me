@@ -21,15 +21,25 @@ const App = () => {
     <div className="app">
       <nav className="navbar">
         <div className="logo">LOGO</div>
-        <button onClick={() => setPage("home")} className={page === "home" ? "active" : ""}>
-          Home
-        </button>
-        <button onClick={() => setPage("projects")} className={page === "projects" ? "active" : ""}>
-          Projets
-        </button>
-        <button onClick={() => setPage("hobbies")} className={page === "hobbies" ? "active" : ""}>
-          Hobbies
-        </button>
+        <div className="navbar-buttons">
+    {page !== "home" && ( // Affiche le bouton "Home" uniquement si on n'est pas sur l'accueil
+      <button
+        onClick={() => setPage("home")}
+        className={page === "home" ? "active" : ""}
+      >
+        Home
+      </button>
+    )}
+    {["projects", "hobbies"].map((tab) => (
+      <button
+        key={tab}
+        onClick={() => setPage(tab)}
+        className={page === tab ? "active" : ""}
+      >
+        {tab.charAt(0).toUpperCase() + tab.slice(1)}
+      </button>
+    ))}
+  </div>
       </nav>
       <div className="page-content">
           {renderPage()}

@@ -4,10 +4,7 @@ import "../styles/Shared.css";
 const Hobbies = ({ setPage }) => {
   return (
     <div className="page-grid">
-      <nav>
-        <button onClick={() => setPage("home")}>Retour</button>
-        <h1>Hobbies</h1>
-      </nav>
+      <h1>Hobbies</h1>
       <div className="content">
         <p>Voici mes hobbies !</p>
         <ul>
