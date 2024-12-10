@@ -1,43 +1,100 @@
-body {
-  font-family: "Arial", sans-serif;
+/* Global styles */
+* {
   margin: 0;
   padding: 0;
-  background-color: #f9f9f9;
+  box-sizing: border-box;
 }
 
-.app-container {
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #fdf8f4; /* Pastel background */
+  color: #333; /* Neutral text color */
+  margin: 0;
+  padding: 0;
+}
+
+/* Main Section */
+.main-section {
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
   align-items: center;
+  height: calc(100vh - 80px);
+  padding: 0 10%;
+}
+
+.intro {
+  flex: 1;
+  max-width: 50%;
+}
+
+.intro h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+.intro p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  color: #555;
+  margin-bottom: 1rem;
+}
+
+.social-links {
+  display: flex;
+  gap: 1rem;
+  font-size: 1.2rem;
+  color: #e27d60;
+}
+
+.avatar {
+  flex: 1;
+  display: flex;
   justify-content: center;
-  height: 100vh;
-}
-.page-content {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  overflow: hidden;
-  transition: transform 0.5s ease-in-out;  /* Transition du glissement */
+  align-items: center;
 }
 
-.slide-enter {
-  transform: translateX(100%);  /* Démarrer la transition depuis la droite */
+.avatar-circle {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background-color: #e27d60;
+  position: relative;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
-.slide-enter-active {
-  transform: translateX(0);  /* Fin de la transition avec la page en place */
+/* Responsivity */
+@media (max-width: 768px) {
+  .main-section {
+    flex-direction: column;
+    text-align: center;
+    padding: 2rem 1rem;
+  }
+
+  .intro {
+    max-width: 100%;
+  }
+
+  .avatar {
+    margin-top: 2rem;
+  }
+
+  .avatar-circle {
+    width: 150px;
+    height: 150px;
+  }
 }
 
-.slide-exit {
-  transform: translateX(0);  /* La page commence à sa position initiale */
-}
+@media (max-width: 480px) {
+  .intro h1 {
+    font-size: 2rem;
+  }
 
-.slide-exit-active {
-  transform: translateX(-100%);  /* La page glisse vers la gauche */
-}
+  .intro p {
+    font-size: 1rem;
+  }
 
-.slide-enter-done {
-  transform: translateX(0);  /* Fin de la transition avec la page en place */
+  .social-links {
+    font-size: 1rem;
+  }
 }

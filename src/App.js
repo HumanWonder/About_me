@@ -1,12 +1,11 @@
-import React, { useState } from "react";
-import { CSSTransition } from "react-transition-group";
+import React from "react";
 import Home from "./components/Home";
 import Projects from "./components/Projects";
 import Hobbies from "./components/Hobbies";
 import "./styles/App.css";
 
 const App = () => {
-  const [page, setPage] = useState("home");
+  const [page, setPage] = React.useState("home");
 
   const renderPage = () => {
     switch (page) {
@@ -18,20 +17,23 @@ const App = () => {
         return <Home setPage={setPage} />;
     }
   };
-
   return (
-    <div className="app-container">
-      <CSSTransition
-        in={true}
-        appear={true}
-        key={page}
-        timeout={500}  // Durée de la transition
-        classNames="slide"
-      >
-        <div className="page-content">
+    <div className="app">
+      <nav className="navbar">
+        <div className="logo">LOGO</div>
+        <button onClick={() => setPage("home")} className={page === "home" ? "active" : ""}>
+          Home
+        </button>
+        <button onClick={() => setPage("projects")} className={page === "projects" ? "active" : ""}>
+          Projets
+        </button>
+        <button onClick={() => setPage("hobbies")} className={page === "hobbies" ? "active" : ""}>
+          Hobbies
+        </button>
+      </nav>
+      <div className="page-content">
           {renderPage()}
         </div>
-      </CSSTransition>
     </div>
   );
 };
