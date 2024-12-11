@@ -2,9 +2,9 @@
 .projects-container {
   display: flex;
   flex-direction: column;
-  gap: 3rem;
-  padding: 2rem 10%;
-  margin-top: 5rem; /* Pour laisser de l'espace sous la navbar */
+  gap: 0; /* Supprime l'espace entre les projets */
+  padding: 0;
+  margin: 0; /* Enlever les marges pour aligner les projets */
 }
 
 /* Bloc de projet */
@@ -12,41 +12,30 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   align-items: center;
-  gap: 2rem;
-  opacity: 0; /* Initialement invisible pour l'effet de scroll */
-  transform: translateY(50px);
+  height: 100vh; /* Chaque projet occupe toute la hauteur de la fenêtre */
+  padding: 2rem 10%;
+  opacity: 0;
+  transform: translateY(50px); /* Les éléments commencent légèrement en bas */
   transition: opacity 0.6s ease, transform 0.6s ease;
 }
 
-/* Versions gauche/droite */
-.project-block.left .project-content {
-  order: 1;
-}
-.project-block.left .project-images {
-  order: 2;
-}
-.project-block.right .project-content {
-  order: 2;
-}
-.project-block.right .project-images {
-  order: 1;
-}
-
-/* Contenu du projet */
+/* Texte du projet */
 .project-content {
   display: flex;
   flex-direction: column;
+  justify-content: center; /* Centrer verticalement */
   gap: 1rem;
+  max-width: 90%; /* Limite la largeur du texte */
 }
 
 .project-content h2 {
-  font-size: 1.8rem;
+  font-size: 2.5rem;
   color: #e27d60;
 }
 
 .project-content p {
-  font-size: 1rem;
-  line-height: 1.5;
+  font-size: 1.2rem;
+  line-height: 1.8;
 }
 
 .project-content a {
@@ -63,12 +52,14 @@
 /* Images */
 .project-images {
   display: flex;
-  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   gap: 1rem;
 }
 
 .project-images img {
-  width: 100%;
+  max-width: 90%; /* Limite la taille des images */
+  max-height: 80%; /* Empêche les images de dépasser l'écran */
   border-radius: 10px;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
 }
