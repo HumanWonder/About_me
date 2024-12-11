@@ -5,6 +5,7 @@ import Hobbies from "./components/Hobbies";
 import "./styles/App.css";
 
 const App = () => {
+
   const [page, setPage] = React.useState("home");
 
   const renderPage = () => {

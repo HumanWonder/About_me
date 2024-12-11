@@ -1,40 +1,80 @@
-/* color: #e27d60*/
-.page-grid {
-    display: grid;
-    grid-template-rows: auto 1fr;
-    width: 80%;
-    margin: auto;
-  }
-  
- /* Navbar */
-.navbar {
+/* Conteneur principal */
+.projects-container {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+  gap: 3rem;
+  padding: 2rem 10%;
+  margin-top: 5rem; /* Pour laisser de l'espace sous la navbar */
+}
+
+/* Bloc de projet */
+.project-block {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   align-items: center;
-  padding: 1rem 2rem;
-  background-color: #fff;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  gap: 2rem;
+  opacity: 0; /* Initialement invisible pour l'effet de scroll */
+  transform: translateY(50px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
 }
 
-.logo {
-  font-size: 1.5rem;
+/* Versions gauche/droite */
+.project-block.left .project-content {
+  order: 1;
+}
+.project-block.left .project-images {
+  order: 2;
+}
+.project-block.right .project-content {
+  order: 2;
+}
+.project-block.right .project-images {
+  order: 1;
+}
+
+/* Contenu du projet */
+.project-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.project-content h2 {
+  font-size: 1.8rem;
+  color: #e27d60;
+}
+
+.project-content p {
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.project-content a {
+  color: #e27d60;
+  text-decoration: none;
   font-weight: bold;
-  color: #e27d60; /* Pastel accent */
+  transition: color 0.3s ease;
 }
-.navbar-buttons button {
-  padding: 0.7rem 1.2rem;
-  border: none;
-  background-color: #e27d60;
-  color: white;
+
+.project-content a:hover {
+  color: #eeb2a1;
+}
+
+/* Images */
+.project-images {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.project-images img {
+  width: 100%;
   border-radius: 10px;
-  cursor: pointer;
-  transition: all 0.3s ease;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
 }
 
-.navbar-buttons button:hover {
-  transform: scale(1.1); /* Agrandit légèrement au survol */
-  background-color: #eeb2a1; /* Change la couleur */
-  color:rgb(185, 72, 72);
-  font-weight: bolder;
+/* Animation de scroll */
+.project-block.appear {
+  opacity: 1;
+  transform: translateY(0);
 }
-
