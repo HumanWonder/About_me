@@ -11,6 +11,7 @@ body {
   color: #333; /* Neutral text color */
   margin: 0;
   padding: 0;
+  height: 100%;
 }
 
 /* Main Section */
@@ -31,6 +32,9 @@ body {
 
 /* Navbar */
 .navbar {
+position: sticky;
+top: 0;
+z-index: 10;
 display: flex;
 justify-content: space-between;
 align-items: center;

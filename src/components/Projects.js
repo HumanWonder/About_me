@@ -5,10 +5,10 @@ import "../styles/Shared.css";
 const projectsData = [
   {
     id: 1,
-    title: "Portfolio",
-    description: "Un site pour présenter mes projets et compétences.",
-    languages: ["React", "CSS", "JavaScript"],
-    github: "https://github.com/votre-repo/portfolio",
+    title: "Space Invaders",
+    description: "A recreation of the arcade classic using only Javascript and no canvas. A project within my formation called 'make-your-game'. A project to learn about the DOM and game logic.",
+    languages: ["CSS", "JavaScript"],
+    github: "https://github.com/HumanWonder/Space_Invaders",
     images: ["image1.jpg", "image2.jpg"],
   },
   {
