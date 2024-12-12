@@ -1,15 +1,19 @@
 import React from "react";
 import { useScrollAnimation } from "./Animation";
+import navigate from "../App";
 import "../styles/Shared.css";
+import EnJeu from "../assets/Space_Invaders_Images/EnJeu.png";
+import EnJeuDeath from "../assets/Space_Invaders_Images/EnJeu(dead).png";
+
 
 const projectsData = [
   {
     id: 1,
     title: "Space Invaders",
-    description: "A recreation of the arcade classic using only Javascript and no canvas. A project within my formation called 'make-your-game'. A project to learn about the DOM and game logic.",
-    languages: ["CSS", "JavaScript"],
+    description: "A recreation of the arcade classic using only Javascript and no canvas. A project within my formation called 'make-your-game'. The main difficulty is to learn about the DOM and create game logic without the use of canvas or frameworks.",
+    languages: ["HTML", "CSS", "JavaScript"],
     github: "https://github.com/HumanWonder/Space_Invaders",
-    images: ["image1.jpg", "image2.jpg"],
+    images: [EnJeu, EnJeuDeath],
   },
   {
     id: 2,
@@ -17,12 +21,13 @@ const projectsData = [
     description: "Un jeu en ligne interactif utilisant Bevy et Renet.",
     languages: ["Rust", "Bevy", "Renet"],
     github: "https://github.com/votre-repo/jeu-multijoueur",
-    images: ["image3.jpg", "image4.jpg"],
+    images: ["", ""],
   },
 ];
 
 const Projects = () => {
   useScrollAnimation();
+  
   return (
     <div className="projects-container">
       {projectsData.map((project, index) => (
@@ -39,6 +44,9 @@ const Projects = () => {
             <a href={project.github} target="_blank" rel="noopener noreferrer">
               Voir sur GitHub
             </a>
+            {project.title === "Space Invaders" && (
+              <button onClick={() => navigate("game")}>Wanna play ?</button>
+            )}
           </div>
           <div className="project-images">
             {project.images.map((image, i) => (
