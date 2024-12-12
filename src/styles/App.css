@@ -31,6 +31,10 @@ body {
   height: calc(100vh - 80px);
   padding: 0 10%;
 }
+.page-content {
+  height:93vh;
+  width: 100vw;
+}
 /* color: #e27d60*/
 .page-grid {
   display: grid;
@@ -57,7 +61,7 @@ font-size: 1.5rem;
 font-weight: bold;
 color: #e27d60; /* Pastel accent */
 }
-.navbar-buttons link {
+.navbar-buttons {
 padding: 0.7rem 1.2rem;
 border: none;
 background-color: #e27d60;
@@ -74,4 +78,8 @@ color:rgb(185, 72, 72);
 font-weight: bolder;
 }
 
-
+#gameContainer {
+  width:"100vw";
+  height:"100vh";
+  overflow: hidden;
+}

@@ -17,7 +17,6 @@ const App = () => {
           <Navbar /> {/* Navbar utilise useLocation ici */}
         </nav>
         <div className="page-content">
-          {/* Définir les routes pour chaque page */}
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/projects" element={<Projects />} />
