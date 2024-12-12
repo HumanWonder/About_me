@@ -1,5 +1,3 @@
-// import React, { useEffect } from 'react';
-
 const Game = () => {
 
     return (
@@ -11,10 +9,7 @@ const Game = () => {
                 title="Game"
                 style={{ border: 'none' }}
             >
-                <script>
-                    document.getElementById("startButton").addEventListener("click", gameStart);
-
-                </script>
+               
             </iframe>
         </div>
     );

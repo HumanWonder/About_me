@@ -9,7 +9,7 @@ const Navbar = () => {
       { id: "home", label: "Home", path: "/" },
       { id: "projects", label: "Projects", path: "/projects" },
       { id: "hobbies", label: "Hobbies", path: "/hobbies" },
-      { id: "game", label: "Game", path: "/game" },
+      // { id: "game", label: "Game", path: "/game" },
     ];
   
     return (
@@ -20,6 +20,7 @@ const Navbar = () => {
             to={tab.path} 
             className={location.pathname === tab.path ? "active" : ""} // Applique 'active' si le path correspond
           >
+            
             {tab.label}
           </Link>
         ))}
