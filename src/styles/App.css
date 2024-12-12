@@ -57,7 +57,7 @@ font-size: 1.5rem;
 font-weight: bold;
 color: #e27d60; /* Pastel accent */
 }
-.navbar-buttons button {
+.navbar-buttons link {
 padding: 0.7rem 1.2rem;
 border: none;
 background-color: #e27d60;
@@ -67,7 +67,7 @@ cursor: pointer;
 transition: all 0.3s ease;
 }
 
-.navbar-buttons button:hover {
+.navbar-buttons link:hover {
 transform: scale(1.1); /* Agrandit légèrement au survol */
 background-color: #eeb2a1; /* Change la couleur */
 color:rgb(185, 72, 72);

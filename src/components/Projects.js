@@ -1,6 +1,5 @@
 import React from "react";
 import { useScrollAnimation } from "./Animation";
-import navigate from "../App";
 import "../styles/Shared.css";
 import EnJeu from "../assets/Space_Invaders_Images/EnJeu.png";
 import EnJeuDeath from "../assets/Space_Invaders_Images/EnJeu(dead).png";
@@ -42,10 +41,10 @@ const Projects = () => {
               <strong>Langages :</strong> {project.languages.join(", ")}
             </p>
             <a href={project.github} target="_blank" rel="noopener noreferrer">
-              Voir sur GitHub
+              Github repository
             </a>
             {project.title === "Space Invaders" && (
-              <button onClick={() => navigate("game")}>Wanna play ?</button>
+              <button onClick={() => window.location.href = '/game'}>Wanna play?</button>
             )}
           </div>
           <div className="project-images">
