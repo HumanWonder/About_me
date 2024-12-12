@@ -6,6 +6,7 @@ import "./styles/App.css";
 
 const App = () => {
 
+  const tabs = ["home", "projects", "hobbies"];
   const [page, setPage] = React.useState("home");
 
   const renderPage = () => {
@@ -23,23 +24,17 @@ const App = () => {
       <nav className="navbar">
         <div className="logo">LOGO</div>
         <div className="navbar-buttons">
-    {page !== "home" && ( // Affiche le bouton "Home" uniquement si on n'est pas sur l'accueil
-      <button
-        onClick={() => setPage("home")}
-        className={page === "home" ? "active" : ""}
-      >
-        Home
-      </button>
-    )}
-    {["projects", "hobbies"].map((tab) => (
-      <button
-        key={tab}
-        onClick={() => setPage(tab)}
-        className={page === tab ? "active" : ""}
-      >
-        {tab.charAt(0).toUpperCase() + tab.slice(1)}
-      </button>
-    ))}
+        {tabs
+      .filter((tab) => tab !== page) // Filtre l'onglet actif
+      .map((tab) => (
+        <button
+          key={tab}
+          onClick={() => setPage(tab)}
+          className={page === tab ? "active" : ""}
+        >
+          {tab.charAt(0).toUpperCase() + tab.slice(1)}
+        </button>
+      ))}
   </div>
       </nav>
       <div className="page-content">

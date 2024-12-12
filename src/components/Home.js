@@ -10,7 +10,7 @@ const Home = ({ setPage }) => {
         I'm a full-stack developer passionate about creating intuitive and dynamic web experiences.
       </p>
       <div className="social-links">
-        <span>Github</span> <span>LinkedIn</span> <span>Discord</span>
+        <a href="https://github.com/HumanWonder"><span>Github</span></a> <a href="https://www.linkedin.com/in/axelle-fouquemberg-33336327b/"><span>LinkedIn</span></a> <a href="https://discordapp.com/users/601798056027095051"><span>Discord</span></a>
       </div>
     </div>
     <div className="avatar">
