@@ -24,6 +24,10 @@ const projectsData = [
   },
 ];
 
+const redirectToGame = () => {
+  window.location.href = "/assets/make-your-game-different-maps/index.html";
+};
+
 const Projects = () => {
   useScrollAnimation();
   
@@ -44,7 +48,7 @@ const Projects = () => {
               Github repository
             </a>
             {project.title === "Space Invaders" && (
-              <button onClick={() => window.location.href = '/game'}>Wanna play?</button>
+              <button onClick={redirectToGame}>Wanna play?</button>
             )}
           </div>
           <div className="project-images">

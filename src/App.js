@@ -4,7 +4,6 @@ import Home from "./components/Home";
 import Navbar from "./components/Navbar";
 import Projects from "./components/Projects";
 import Hobbies from "./components/Hobbies";
-import Game from "./components/Game";
 import "./styles/App.css";
 
 const App = () => {
@@ -21,7 +20,6 @@ const App = () => {
             <Route path="/" element={<Home />} />
             <Route path="/projects" element={<Projects />} />
             <Route path="/hobbies" element={<Hobbies />} />
-            <Route path="/game" element={<Game />} />
           </Routes>
         </div>
       </div>
