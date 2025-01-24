@@ -1,8 +1,12 @@
 import React from "react";
 import { useScrollAnimation } from "./Animation";
 import "../styles/Shared.css";
+
 import EnJeu from "../assets/Space_Invaders_Images/EnJeu.png";
 import EnJeuDeath from "../assets/Space_Invaders_Images/EnJeu(dead).png";
+
+import Simu from "../assets/Smart_Road_Images/Simulation.png";
+import Res from "../assets/Smart_Road_Images/Results_Menu.png";
 
 
 const projectsData = [
@@ -16,6 +20,14 @@ const projectsData = [
   },
   {
     id: 2,
+    title: "Smart Road",
+    description: "Une simulation d'intersection routière intelligente avec des véhicules autonomes. Le but est de ne pas provoquer d'accidents. Ici il n'y a pas de signalisations, juste des véhicules avec une destination et un carrefour commun.",
+    languages: ["Rust", "SDL2"],
+    github: "https://github.com/HumanWonder/smart-road",
+    images: [Simu, Res],
+  },
+  {
+    id: 3,
     title: "Jeu Multijoueur",
     description: "Un jeu en ligne interactif utilisant Bevy et Renet.",
     languages: ["Rust", "Bevy", "Renet"],
