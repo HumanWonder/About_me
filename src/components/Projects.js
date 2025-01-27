@@ -8,6 +8,14 @@ import EnJeuDeath from "../assets/Space_Invaders_Images/EnJeu(dead).png";
 import Simu from "../assets/Smart_Road_Images/Simulation.png";
 import Res from "../assets/Smart_Road_Images/Results_Menu.png";
 
+import Menu from "../assets/multiplayer_img/Menu.png";
+import Gaming from "../assets/multiplayer_img/Gaming.png";
+
+import First from "../assets/go-reloaded/First.png";
+import Second from "../assets/go-reloaded/Second.png";
+
+import Name from "../assets/github_img/name.png";
+import Welcome from "../assets/github_img/welcome.png";
 
 const projectsData = [
   {
@@ -21,18 +29,34 @@ const projectsData = [
   {
     id: 2,
     title: "Smart Road",
-    description: "Une simulation d'intersection routière intelligente avec des véhicules autonomes. Le but est de ne pas provoquer d'accidents. Ici il n'y a pas de signalisations, juste des véhicules avec une destination et un carrefour commun.",
+    description: "A simulation of an intelligent road intersection with autonomous vehicles. The goal is to avoid accidents. There are no traffic signals here, just vehicles with destinations and a shared intersection.",
     languages: ["Rust", "SDL2"],
     github: "https://github.com/HumanWonder/smart-road",
     images: [Simu, Res],
   },
   {
     id: 3,
-    title: "Jeu Multijoueur",
-    description: "Un jeu en ligne interactif utilisant Bevy et Renet.",
+    title: "Multiplayer FPS",
+    description: "An interactive online game using Bevy and Renet. UDP, modeling, menus, movement management, etc. We were tasked with recreating Maze War, but in our enthusiasm, a 3D game was born.",
     languages: ["Rust", "Bevy", "Renet"],
-    github: "https://github.com/votre-repo/jeu-multijoueur",
-    images: ["", ""],
+    github: "https://github.com/HumanWonder/Multiplayer-FPS",
+    images: [Menu, Gaming],
+  },
+  {
+    id: 4,
+    title: "Go-reloaded",
+    description: "The first program from the training that started in May 2022. A text processing program. When learning, it’s important to look back and see how much progress has been made. Nothing has been modified since.",
+    languages: ["Golang"],
+    github: "https://github.com/HumanWonder/go-reloaded",
+    images: [First, Second],
+  },
+  {
+    id: 5,
+    title: "See more →",
+    description: "",
+    languages: [],
+    github: "https://github.com/HumanWonder",
+    images: [Name, Welcome],
   },
 ];
 
@@ -42,7 +66,7 @@ const redirectToGame = () => {
 
 const Projects = () => {
   useScrollAnimation();
-  
+
   return (
     <div className="projects-container">
       {projectsData.map((project, index) => (
@@ -53,10 +77,12 @@ const Projects = () => {
           <div className="project-content">
             <h2>{project.title}</h2>
             <p>{project.description}</p>
-            <p>
-              <strong>Langages :</strong> {project.languages.join(", ")}
-            </p>
-            <a href={project.github} target="_blank" rel="noopener noreferrer">
+            {project.languages.length > 0 && (
+              <p>
+                <strong>Langages :</strong> {project.languages.join(", ")}
+              </p>
+            )}
+            <a className="github_link" href={project.github} target="_blank" rel="noopener noreferrer">
               Github repository
             </a>
             {project.title === "Space Invaders" && (
@@ -65,7 +91,8 @@ const Projects = () => {
           </div>
           <div className="project-images">
             {project.images.map((image, i) => (
-              <img key={i} src={image} alt={`${project.title} ${i + 1}`} />
+              <img className={`${project.id === 2 ? "second-project" : ""}`}
+                key={i} src={image} alt={`${project.title} ${i + 1}`} />
             ))}
           </div>
         </div>

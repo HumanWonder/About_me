@@ -49,6 +49,11 @@
   color: #eeb2a1;
 }
 
+.github_link {
+  font-weight: bolder;
+  font-size: 25px;
+}
+
 /* Images */
 .project-images {
   display: flex;
@@ -73,6 +78,13 @@
   margin-left: auto; /* Décale les images paires à droite */
   margin-right: 10%;
 }
+/* Styles spécifiques aux images du deuxième projet de base trop grandes */
+.project-images .second-project {
+  max-width: 50%; /* Réduit la taille des images */
+  max-height: 50%; /* Limite la hauteur */
+  margin: 0 auto; /* Centre les images */
+}
+
 /* Animation de scroll */
 .project-block.appear {
   opacity: 1;
