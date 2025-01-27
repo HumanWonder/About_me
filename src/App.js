@@ -4,6 +4,7 @@ import Home from "./components/Home";
 import Navbar from "./components/Navbar";
 import Projects from "./components/Projects";
 import Hobbies from "./components/Hobbies";
+import CV from "./components/CV";
 import "./styles/App.css";
 
 const App = () => {
@@ -20,6 +21,7 @@ const App = () => {
             <Route path="/" element={<Home />} />
             <Route path="/projects" element={<Projects />} />
             <Route path="/hobbies" element={<Hobbies />} />
+            <Route path="/cv" element={<CV />} />
           </Routes>
         </div>
       </div>

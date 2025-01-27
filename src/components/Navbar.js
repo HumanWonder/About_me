@@ -9,6 +9,7 @@ const Navbar = () => {
     { id: "home", label: "Home", path: "/" },
     { id: "projects", label: "Projects", path: "/projects" },
     { id: "hobbies", label: "Hobbies", path: "/hobbies" },
+    { id: "cv", label: "CV", path: "/cv" },
     // { id: "game", label: "Game", path: "/game" }, Pas affiché mais considéré comme une page active
   ];
 
