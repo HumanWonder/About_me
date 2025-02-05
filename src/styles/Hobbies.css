@@ -1,9 +1,11 @@
 .hobbies-container {
     display: flex;
     flex-direction: column;
-    gap: 0; /* Supprime l'espace entre les projets */
+    gap: 0;
+    /* Supprime l'espace entre les projets */
     padding: 0;
-    margin: 0; /* Enlever les marges pour aligner les projets */
+    margin: 0;
+    /* Enlever les marges pour aligner les projets */
 }
 
 .hobby-block {
@@ -96,4 +98,28 @@
 
 .carousel-button:hover {
     transform: scale(1.2);
+}
+
+.reveal-secret-btn {
+    margin-top: 10px;
+    padding: 8px 12px;
+    font-size: 1rem;
+    font-weight: bold;
+    background-color: #e27d60;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.reveal-secret-btn:hover {
+    background-color: #eeb2a1;
+}
+
+.secret-image {
+    margin-top: 10px;
+    max-width: 80%;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }

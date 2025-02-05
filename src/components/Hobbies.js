@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useScrollAnimation } from "./Animation";
+import { hobbies } from "../assets/Images";
 import "../styles/Hobbies.css";
 
 const HobbiesData = [
@@ -8,9 +9,11 @@ const HobbiesData = [
     title: "Playing Video Games",
     description: "Who doesn't like a good video game session? I grew up with video games and surprisingly learned a lot! Between rhythm games, RPGs, puzzle games, etc. I spend lots of time discovering new stories, improving my skills, cracking puzzles and deepening my imagination.",
     images: [
-      { src: "image1.jpg", caption: "RPG Adventures" },
-      { src: "image2.jpg", caption: "Rhythm Games" },
-      { src: "image3.jpg", caption: "Puzzle Challenges" },
+      { src: hobbies.videogames.portal2_game, caption: "A game I love redoing. Coop and single player... Yes, even if I know the story by heart." },
+      { src: hobbies.videogames.HM, caption: "A rhythm game. I play in expert mode !" },
+      { src: hobbies.videogames.Genshin_Impact_Logo, caption: "Apart from the obvious cash-grab of the gacha game, it's got an unbelievable story (not done yet) and a lovely world to explore.\n I also adore Reverse:1999 in the same genre." },
+      { src: hobbies.videogames.PL_logo, caption: "My game-of-the-moment. Can't say I appreciated every single riddle and puzzle but it's a nostalgic and really nice license to rediscover." },
+      { src: hobbies.videogames.tunic_logo, caption: "Best discovery ever. I don't want to spoil things, you need to play it." }
     ],
   },
   {
@@ -18,7 +21,7 @@ const HobbiesData = [
     title: "Reading Books",
     description: "My all-time favourite since my childhood. Books open doors to endless imagination. I enjoy reading fantasy, science fiction, thrillers, always searching for new perspectives and stories.",
     images: [
-      { src: "book1.jpg", caption: "Fantasy Novels" },
+      { src: hobbies.books.Werber, caption: "Fantasy Novels" },
       { src: "book2.jpg", caption: "Sci-Fi Adventures" },
       { src: "book3.jpg", caption: "Thrillers" },
     ],
@@ -37,7 +40,14 @@ const HobbiesData = [
 
 const Hobbies = () => {
   useScrollAnimation("hobby-block");
-  
+
+  const [isSecretRevealed, setSecretRevealed] = useState(false);
+
+  const revealSecret = () => {
+    setSecretRevealed(true);
+  };
+
+
   const [imageIndexes, setImageIndexes] = useState(
     HobbiesData.map(() => 0) // Initialise un index pour chaque hobby
   );
@@ -82,6 +92,18 @@ const Hobbies = () => {
               <figure className="carousel-image">
                 <img src={hobby.images[imageIndexes[hobbyIndex]].src} alt={`Hobby ${hobbyIndex}`} />
                 <figcaption>{hobby.images[imageIndexes[hobbyIndex]].caption}</figcaption>
+
+                {/* Vérifie si l'image correspond à Tunic */}
+                {hobby.images.src === hobbies.videogames.tunic_logo && !isSecretRevealed && (
+                  <button onClick={revealSecret} className="reveal-secret-btn">
+                    Reveal Secret
+                  </button>
+                )}
+
+                {/* Affiche l'image secrète si le bouton est cliqué */}
+                {hobby.images.src === hobbies.videogames.tunic_logo && isSecretRevealed && (
+                  <img src={hobbies.videogames.fox_secret} alt="Secret message in Fox language" className="secret-image" />
+                )}
               </figure>
             </div>
 

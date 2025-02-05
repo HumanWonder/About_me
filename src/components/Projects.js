@@ -1,21 +1,8 @@
 import React from "react";
 import { useScrollAnimation } from "./Animation";
+import {work} from "../assets/Images";
 import "../styles/Projects.css";
 
-import EnJeu from "../assets/Space_Invaders_Images/EnJeu.png";
-import EnJeuDeath from "../assets/Space_Invaders_Images/EnJeu(dead).png";
-
-import Simu from "../assets/Smart_Road_Images/Simulation.png";
-import Res from "../assets/Smart_Road_Images/Results_Menu.png";
-
-import Menu from "../assets/multiplayer_img/Menu.png";
-import Gaming from "../assets/multiplayer_img/Gaming.png";
-
-import First from "../assets/go-reloaded/First.png";
-import Second from "../assets/go-reloaded/Second.png";
-
-import Name from "../assets/github_img/name.png";
-import Welcome from "../assets/github_img/welcome.png";
 
 const projectsData = [
   {
@@ -24,7 +11,7 @@ const projectsData = [
     description: "A recreation of the arcade classic using only Javascript and no canvas. A project within my formation called 'make-your-game'. The main difficulty is to learn about the DOM and create game logic without the use of canvas or frameworks.",
     languages: ["HTML", "CSS", "JavaScript"],
     github: "https://github.com/HumanWonder/Space_Invaders",
-    images: [EnJeu, EnJeuDeath],
+    images: [work.spaceInvaders.EnJeu, work.spaceInvaders.death_screen],
   },
   {
     id: 2,
@@ -32,7 +19,7 @@ const projectsData = [
     description: "A simulation of an intelligent road intersection with autonomous vehicles. The goal is to avoid accidents. There are no traffic signals here, just vehicles with destinations and a shared intersection.",
     languages: ["Rust", "SDL2"],
     github: "https://github.com/HumanWonder/smart-road",
-    images: [Simu, Res],
+    images: [work.smartRoad.Simulation, work.smartRoad.Results_Menu],
   },
   {
     id: 3,
@@ -40,7 +27,7 @@ const projectsData = [
     description: "An interactive online game using Bevy and Renet. UDP, modeling, menus, movement management, etc. We were tasked with recreating Maze War, but in our enthusiasm, a 3D game was born.",
     languages: ["Rust", "Bevy", "Renet"],
     github: "https://github.com/HumanWonder/Multiplayer-FPS",
-    images: [Menu, Gaming],
+    images: [work.multiplayer.Menu, work.multiplayer.Gaming],
   },
   {
     id: 4,
@@ -48,7 +35,7 @@ const projectsData = [
     description: "The first program from the training that started in May 2022. A text processing program. When learning, it’s important to look back and see how much progress has been made. Nothing has been modified since.",
     languages: ["Golang"],
     github: "https://github.com/HumanWonder/go-reloaded",
-    images: [First, Second],
+    images: [work.go_reloaded.First, work.go_reloaded.Second],
   },
   {
     id: 5,
@@ -56,7 +43,7 @@ const projectsData = [
     description: "",
     languages: [],
     github: "https://github.com/HumanWonder",
-    images: [Name, Welcome],
+    images: [work.github.name, work.github.welcome],
   },
 ];
 
