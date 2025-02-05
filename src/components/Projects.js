@@ -65,8 +65,8 @@ const redirectToGame = () => {
 };
 
 const Projects = () => {
-  useScrollAnimation();
-
+  useScrollAnimation("project-block");
+  console.log("Projects rendered"); //DEBUG
   return (
     <div className="projects-container">
       {projectsData.map((project, index) => (

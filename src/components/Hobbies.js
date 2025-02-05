@@ -36,7 +36,7 @@ const HobbiesData = [
 
 
 const Hobbies = () => {
-  useScrollAnimation();
+  useScrollAnimation("hobby-block");
   
   const [imageIndexes, setImageIndexes] = useState(
     HobbiesData.map(() => 0) // Initialise un index pour chaque hobby
