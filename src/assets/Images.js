@@ -70,14 +70,14 @@ const videogamesImages = videogamesContext.keys().reduce((imagesObj, path) => {
     return imagesObj;
 }, {});
 
-const booksContext = require.context('../assets/Hobbies_img/games', false, /\.(png|jpe?g|gif)$/);
+const booksContext = require.context('../assets/Hobbies_img/books', false, /\.(png|jpe?g|gif)$/);
 const booksImages = booksContext.keys().reduce((imagesObj, path) => {
     const key = path.replace('./', '').replace(/\.(png|jpe?g|gif)$/, '');
     imagesObj[key] = booksContext(path);
     return imagesObj;
 }, {});
 
-const drawingsContext = require.context('../assets/Hobbies_img/games', false, /\.(png|jpe?g|gif)$/);
+const drawingsContext = require.context('../assets/Hobbies_img/drawings', false, /\.(png|jpe?g|gif)$/);
 const drawingsImages = drawingsContext.keys().reduce((imagesObj, path) => {
     const key = path.replace('./', '').replace(/\.(png|jpe?g|gif)$/, '');
     imagesObj[key] = drawingsContext(path);

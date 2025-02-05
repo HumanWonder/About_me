@@ -93,14 +93,14 @@ const Hobbies = () => {
                 <figcaption>{hobby.images[imageIndexes[hobbyIndex]].caption}</figcaption>
 
                 {/* Vérifie si l'image correspond à Tunic */}
-                {hobby.images.src === hobbies.videogames.tunic_logo && !isSecretRevealed && (
+                {hobby.images.src === hobbies.videogames.tunic_logo && isSecretRevealed && (
                   <button onClick={revealSecret} className="reveal-secret-btn">
                     Reveal Secret
                   </button>
                 )}
 
                 {/* Affiche l'image secrète si le bouton est cliqué */}
-                {hobby.images.src === hobbies.videogames.tunic_logo && isSecretRevealed && (
+                {hobby.images.src === hobbies.videogames.tunic_logo && !isSecretRevealed && (
                   <img src={hobbies.videogames.fox_secret} alt="Secret message in Fox language" className="secret-image" />
                 )}
               </figure>

@@ -2,9 +2,7 @@ import { useEffect } from "react";
 
 export const useScrollAnimation = (className) => {
   useEffect(() => {
-    console.log("useEffect appelé");
     const elements = document.querySelectorAll(`.${className}`);
-    console.log("Elements found : ", elements.length); // DEBUG
 
     const handleScroll = () => {
       elements.forEach((el, index) => {
