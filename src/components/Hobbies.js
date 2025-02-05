@@ -47,7 +47,6 @@ const Hobbies = () => {
     setSecretRevealed(true);
   };
 
-
   const [imageIndexes, setImageIndexes] = useState(
     HobbiesData.map(() => 0) // Initialise un index pour chaque hobby
   );

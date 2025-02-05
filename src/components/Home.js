@@ -19,7 +19,9 @@ const Home = ({ setPage }) => {
         </div>
       </div>
       <div className="avatar">
-        <div className="avatar-circle"></div>
+        <div className="avatar-circle">
+          <img className="avatar-circle" src="https://avatar.iran.liara.run/public/97" alt="avatar_img"></img>
+        </div>
       </div>
     </main>
   );
