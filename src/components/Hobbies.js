@@ -21,9 +21,9 @@ const HobbiesData = [
     title: "Reading Books",
     description: "My all-time favourite since my childhood. Books open doors to endless imagination. I enjoy reading fantasy, science fiction, thrillers, always searching for new perspectives and stories.",
     images: [
-      { src: hobbies.books.Werber, caption: "Fantasy Novels" },
-      { src: "book2.jpg", caption: "Sci-Fi Adventures" },
-      { src: "book3.jpg", caption: "Thrillers" },
+      { src: hobbies.books.Werber, caption: "Current read" },
+      { src: hobbies.books.Frieren, caption: "Took me a couple volumes to appreciate the story and characters. I'm so glad I gave it a chance." },
+      { src: hobbies.books.Danielewski, caption: "What I want to read next but that book scares me..." },
     ],
   },
   {
@@ -80,32 +80,41 @@ const Hobbies = () => {
             <h2>{hobby.title}</h2>
             <p>{hobby.description}</p>
           </div>
-
+  
           {/* Carrousel d'images */}
           <div className="carousel">
             <button className="carousel-button" onClick={() => prevImage(hobbyIndex)}>
               &#9665;
             </button>
-
+  
             <div className="carousel-images">
               <figure className="carousel-image">
-                <img src={hobby.images[imageIndexes[hobbyIndex]].src} alt={`Hobby ${hobbyIndex}`} />
+                <img
+                  src={hobby.images[imageIndexes[hobbyIndex]].src}
+                  alt={`Hobby ${hobbyIndex}`}
+                />
                 <figcaption>{hobby.images[imageIndexes[hobbyIndex]].caption}</figcaption>
-
+  
                 {/* Vérifie si l'image correspond à Tunic */}
-                {hobby.images.src === hobbies.videogames.tunic_logo && isSecretRevealed && (
-                  <button onClick={revealSecret} className="reveal-secret-btn">
-                    Reveal Secret
-                  </button>
-                )}
-
+                {hobby.images[imageIndexes[hobbyIndex]].src === hobbies.videogames.tunic_logo &&
+                  !isSecretRevealed && (
+                    <button onClick={revealSecret} className="reveal-secret-btn">
+                      Reveal Secret
+                    </button>
+                  )}
+  
                 {/* Affiche l'image secrète si le bouton est cliqué */}
-                {hobby.images.src === hobbies.videogames.tunic_logo && !isSecretRevealed && (
-                  <img src={hobbies.videogames.fox_secret} alt="Secret message in Fox language" className="secret-image" />
-                )}
+                {hobby.images[imageIndexes[hobbyIndex]].src === hobbies.videogames.tunic_logo &&
+                  isSecretRevealed && (
+                    <img
+                      src={hobbies.videogames.fox_secret}
+                      alt="Secret message in Fox language"
+                      className="secret-image"
+                    />
+                  )}
               </figure>
             </div>
-
+  
             <button className="carousel-button" onClick={() => nextImage(hobbyIndex)}>
               &#9655;
             </button>
@@ -114,6 +123,7 @@ const Hobbies = () => {
       ))}
     </div>
   );
+  
 };
 
 export default Hobbies;
