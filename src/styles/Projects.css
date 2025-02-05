@@ -16,9 +16,14 @@
   padding: 2rem 10%;
   opacity: 0;
   transform: translateY(50px); /* Les éléments commencent légèrement en bas */
-  transition: opacity 0.6s ease, transform 0.6s ease;
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
 }
 
+/* Ajouté dynamiquement par le JS */
+.project-block.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
 /* Texte du projet */
 .project-content {
   display: flex;
@@ -78,6 +83,13 @@
   margin-left: auto; /* Décale les images paires à droite */
   margin-right: 10%;
 }
+/*Style légendes des images*/
+.project-images figcaption {
+  font-size: 0.9rem;
+  color: #666;
+  margin-top: 0.5rem;
+}
+
 /* Styles spécifiques aux images du deuxième projet de base trop grandes */
 .project-images .second-project {
   max-width: 50%; /* Réduit la taille des images */

@@ -1,6 +1,6 @@
 import React from "react";
 import { useScrollAnimation } from "./Animation";
-import "../styles/Shared.css";
+import "../styles/Projects.css";
 
 import EnJeu from "../assets/Space_Invaders_Images/EnJeu.png";
 import EnJeuDeath from "../assets/Space_Invaders_Images/EnJeu(dead).png";
@@ -79,7 +79,7 @@ const Projects = () => {
             <p>{project.description}</p>
             {project.languages.length > 0 && (
               <p>
-                <strong>Langages :</strong> {project.languages.join(", ")}
+                <strong>Languages :</strong> {project.languages.join(", ")}
               </p>
             )}
             <a className="github_link" href={project.github} target="_blank" rel="noopener noreferrer">

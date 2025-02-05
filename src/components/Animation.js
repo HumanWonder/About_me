@@ -1,26 +1,27 @@
 import { useEffect } from "react";
 
-export const useScrollAnimation = (selector = ".project-block", threshold = 0.3) => {
+export const useScrollAnimation = () => {
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              entry.target.classList.add("appear");
-            } else {
-              entry.target.classList.remove("appear"); // Supprime la classe si l'élément sort du viewport
-            }
-          });
-      },
-      { threshold }
-    );
+    console.log("useEffect appelé");
+    const elements = document.querySelectorAll(".hobby-block");
 
-    // Sélectionne les éléments cibles
-    const elements = document.querySelectorAll(selector);
-    elements.forEach((el) => observer.observe(el));
+    const handleScroll = () => {
+      elements.forEach((el, index) => {
+        const rect = el.getBoundingClientRect();
+        const isVisible = rect.top < window.innerHeight * 0.75; // Visible quand 75% est dans l'écran
 
-    return () => {
-      elements.forEach((el) => observer.unobserve(el));
+        console.log(`Hobby ${index + 1} - Top: ${rect.top}, Visible: ${isVisible}`); // DEBUG
+        if (isVisible) {
+          el.classList.add("visible");
+        } else {
+          el.classList.remove("visible");
+        }
+      });
     };
-  }, [selector, threshold]);
+
+    window.addEventListener("scroll", handleScroll);
+    handleScroll(); // Vérifie immédiatement si un élément est déjà visible
+
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 };

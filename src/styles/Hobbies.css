@@ -1,0 +1,99 @@
+.hobbies-container {
+    display: flex;
+    flex-direction: column;
+    gap: 0; /* Supprime l'espace entre les projets */
+    padding: 0;
+    margin: 0; /* Enlever les marges pour aligner les projets */
+}
+
+.hobby-block {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    height: 100vh;
+    padding: 2rem 10%;
+    opacity: 0;
+    transform: translateY(50px);
+    /* Les éléments commencent légèrement en bas */
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+
+}
+
+/* Ajouté dynamiquement par le JS */
+.hobby-block.visible {
+    opacity: 1;
+    transform: translateY(10);
+}
+
+/* Texte du projet */
+.hobby-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* Centrer verticalement */
+    gap: 1rem;
+    max-width: 90%;
+    /* Limite la largeur du texte */
+}
+
+.hobby-content h2 {
+    font-size: 2.5rem;
+    color: #e27d60;
+}
+
+.hobby-content p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+}
+
+.hobby-content a {
+    color: #e27d60;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.hobby-content a:hover {
+    color: #eeb2a1;
+}
+
+/* Style du carrousel */
+.carousel {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    margin-top: 15px;
+}
+
+/* Conteneur des images */
+.carousel-images {
+    width: 80%;
+    text-align: center;
+}
+
+.carousel-image img {
+    width: 100%;
+    max-height: 300px;
+    border-radius: 10px;
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+}
+
+.carousel-image figcaption {
+    margin-top: 10px;
+    font-style: italic;
+    color: #555;
+}
+
+/* Boutons du carrousel */
+.carousel-button {
+    background: none;
+    border: none;
+    font-size: 2rem;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.carousel-button:hover {
+    transform: scale(1.2);
+}
