@@ -1,11 +1,16 @@
 import React from "react";
+import "../styles/CV.css";
 
 const CV = () => {
     return (
-        <div className="project-content">
+        <div className="content">
             <h1>My Resume</h1>
             <br />
             <p>Feel free to download or view my resume below:</p>
+            {/* Bouton de téléchargement */}
+            <a href="/assets/cv/Axelle-FOUQUEMBERG.pdf" download="Axelle-FOUQUEMBERG.pdf">
+                <button className="CV_download">Download CV</button>
+            </a>
             <br />
             {/* Aperçu du CV (PDF intégré) */}
             <div className="cv-preview">
@@ -17,11 +22,6 @@ const CV = () => {
                     style={{ border: "none", toolbar: "0", view: "fit" }}
                 ></iframe>
             </div>
-
-            {/* Bouton de téléchargement */}
-            <a href="/assets/cv/Axelle-FOUQUEMBERG.pdf" download="Axelle-FOUQUEMBERG.pdf">
-                <button className="navbar-buttons">Download CV</button>
-            </a>
         </div>
     );
 };

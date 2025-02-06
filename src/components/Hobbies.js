@@ -107,7 +107,7 @@ const Hobbies = () => {
                 {hobby.images[imageIndexes[hobbyIndex]].src === hobbies.videogames.tunic_logo &&
                   isSecretRevealed && (
                     <img
-                      src={hobbies.videogames.fox_secret}
+                      src={hobbies.videogames.secret}
                       alt="Secret message in Fox language"
                       className="secret-image"
                     />
