@@ -18,7 +18,7 @@ const CV = () => {
                     src="/assets/cv/Axelle-FOUQUEMBERG.pdf"
                     title="CV Preview"
                     width="100%"
-                    height="900vh"
+                    height="800vh"
                     style={{ border: "none", toolbar: "0", view: "fit" }}
                 ></iframe>
             </div>

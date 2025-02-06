@@ -29,12 +29,25 @@ const HobbiesData = [
   {
     id: 3,
     title: "Drawing",
-    description: "",
+    description: "A catalyst to my creativity. I draw to express my feelings, to relax, to create new worlds and characters. I love to experiment with different styles and techniques. I'm mostly doing sketches but I plan on moving to digital soon.",
     images: [
-      { src: "image1.jpg", caption: "" },
-      { src: "image2.jpg", caption: "" },
+      { src: hobbies.drawings.portrait, caption: "Aug 5th 2020 -> Semi-realistic portrait" },
+      { src: hobbies.drawings.test_couleurs, caption: "Aug 2nd 2020 -> Redoing a photograph seen on Pinterest with some colours." },
+      { src: hobbies.drawings.M_C, caption: "Apr 25th 2024 -> Sketch of two of my OCs (Original Characters)" },
+      { src: hobbies.drawings.l_Horlogere, caption: "Jun 2nd 2024 -> A character, named The Clockworker, who could be quite intimidating..." },
     ],
   },
+  {
+    id:4,
+    title: "Others~",
+    description: "A mix of interests that you may have too !",
+    images: [
+      {src: "legos", caption: "I love building legos, it's a great way to relax and have fun. Here is BD1 from Star Wars:Fallen Order"},
+      {src: "Crocheting/Knitting", caption: "Knitting a scarf from DoctorWho is easier than I thought... Here is another project that I've done for a friend."},
+      {src: "Learning Japanese", caption: "Learning japanese slowly but surely, thanks to Duolingo, a couple of books and Youtube."},
+      {src: "My dog", caption: "I had to. His name's Elliot. By the time I'm writing this he's 15 years old and may leave us soon. I'll love him forever."}
+    ]
+  }
 ];
 
 
