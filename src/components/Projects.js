@@ -1,5 +1,5 @@
 import React from "react";
-import { useScrollAnimation } from "./Animation";
+import { useScrollAnimation} from "./Animation";
 import { work } from "../assets/Images";
 import "../styles/Projects.css";
 
@@ -52,7 +52,9 @@ const redirectToGame = () => {
 };
 
 const Projects = () => {
+
   useScrollAnimation("project-block");
+
   return (
     <div className="projects-container">
       {projectsData.map((project, index) => (
@@ -61,13 +63,15 @@ const Projects = () => {
           className={`project-block ${index % 2 === 0 ? "left" : "right"}`}
         >
           <div className="project-content">
-            <h2>{project.title}</h2>
-            <p>{project.description}</p>
-            {project.languages.length > 0 && (
-              <p>
-                <strong>Languages :</strong> {project.languages.join(", ")}
-              </p>
-            )}
+            <div className="project-text-background">
+              <h2>{project.title}</h2>
+              <p>{project.description}</p>
+              {project.languages.length > 0 && (
+                <p>
+                  <strong>Languages :</strong> {project.languages.join(", ")}
+                </p>
+              )}
+            </div>
             <a className="github_link" href={project.github} target="_blank" rel="noopener noreferrer">
               <svg width="25" height="25" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
                 <path d="M12 2C6.48 2 2 6.48 2 12C2 16.42 5.12 20.17 9.29 21.5C9.79 21.58 10 21.27 10 21V18.9C6.73 19.61 6.15 17.75 6.15 17.75C5.72 16.62 5.1 16.35 5.1 16.35C4.22 15.81 5.18 15.83 5.18 15.83C6.18 15.91 6.68 16.85 6.68 16.85C7.5 18.25 8.98 17.87 9.54 17.65C9.63 17.01 9.88 16.56 10.15 16.32C7.52 16.05 4.75 15.06 4.75 10.72C4.75 9.5 5.18 8.5 5.88 7.72C5.77 7.46 5.4 6.4 5.98 4.98C5.98 4.98 6.86 4.7 9.98 6.6C10.83 6.35 11.72 6.22 12.62 6.22C13.52 6.22 14.41 6.35 15.26 6.6C18.38 4.7 19.26 4.98 19.26 4.98C19.84 6.4 19.47 7.46 19.36 7.72C20.06 8.5 20.49 9.5 20.49 10.72C20.49 15.07 17.71 16.04 15.07 16.31C15.42 16.62 15.73 17.19 15.73 18.08V21C15.73 21.27 15.94 21.58 16.44 21.5C20.61 20.17 23.73 16.42 23.73 12C23.73 6.48 19.25 2 13.73 2H12Z" />

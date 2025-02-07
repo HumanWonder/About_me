@@ -42,10 +42,13 @@ const HobbiesData = [
     title: "Others~",
     description: "A mix of interests that you may have too !",
     images: [
-      {src: "legos", caption: "I love building legos, it's a great way to relax and have fun. Here is BD1 from Star Wars:Fallen Order"},
-      {src: "Crocheting/Knitting", caption: "Knitting a scarf from DoctorWho is easier than I thought... Here is another project that I've done for a friend."},
-      {src: "Learning Japanese", caption: "Learning japanese slowly but surely, thanks to Duolingo, a couple of books and Youtube."},
-      {src: "My dog", caption: "I had to. His name's Elliot. By the time I'm writing this he's 15 years old and may leave us soon. I'll love him forever."}
+      {src: hobbies.other.BD1, caption: "I love building legos, it's a great way to relax and have fun. Here is BD1 from Star Wars:Fallen Order"},
+      {src: hobbies.other.Turtle_crochet, caption: "Knitting a scarf from DoctorWho was easier than I thought... Here is crochet project that I've done for a friend."},
+      {src: hobbies.other.learning_jap, caption: "Learning japanese slowly but surely, thanks to Duolingo, a couple of books and Youtube."},
+      {src: hobbies.other.baby_sunflower, caption: "Every year (for the past 3 years now), I've gotten into the habit of planting dwarf sunflowers in the garden —to the great dismay of my parents..."},
+      {src: hobbies.other.Elliot, caption: "I had to. His name's Elliot. By the time I'm writing this he's 15 years old and may leave us soon. I'll love him forever."},
+      {src: hobbies.other.blep_doggo, caption: "I love my dog... Have I already said that ?"},
+
     ]
   }
 ];

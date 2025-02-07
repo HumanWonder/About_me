@@ -1,5 +1,16 @@
+/*  🌟 Fond avec gradient et texture fixe */
+body {
+  background: linear-gradient(168deg, rgba(226, 125, 96, 1) 11%, rgba(96, 197, 226, 1) 68%);
+  background-size: cover; /* Assure que la texture couvre toute la page sans répétition */
+  background-image: url("https://www.transparenttextures.com/patterns/type.png"), linear-gradient(168deg, rgba(226, 125, 96, 1) 11%, rgba(96, 197, 226, 1) 68%);
+  background-attachment: scroll; /* Permet au fond de ne pas défiler avec la page */
+}
+
 /* Conteneur principal */
 .projects-container {
+  min-height: 100vh;
+  flex-direction: column;
+  align-items: center;
   display: flex;
   flex-direction: column;
   gap: 0;
@@ -41,13 +52,25 @@
 }
 
 .project-content h2 {
+  /* background-color: #eeb2a1;
+  border-radius: 50%;
+  padding-left: 29%;
   font-size: 2.5rem;
-  color: #e27d60;
+  color: #da5a35; */
+  background: rgba(255, 255, 255, 0.3);
+  padding: 10px 20px;
+  border-radius: 8px;
+  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
 }
 
 .project-content p {
+  /* margin-top: 30px;
   font-size: 1.2rem;
-  line-height: 1.8;
+  line-height: 1.8; */
+  background: rgba(255, 255, 255, 0.3);
+  padding: 10px 20px;
+  border-radius: 8px;
+  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
 }
 
 .project-content a {
@@ -60,6 +83,12 @@
 .project-content a:hover {
   color: #eeb2a1;
 }
+
+/* .project-text-background {
+  background-color: #4294afbb;
+  border-radius: 18%;
+  padding: 15px;
+} */
 
 .github_link {
   display: inline-flex;

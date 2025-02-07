@@ -84,9 +84,16 @@ const drawingsImages = drawingsContext.keys().reduce((imagesObj, path) => {
     return imagesObj;
 }, {});
 
+const otherContext = require.context('../assets/Hobbies_img/other', false, /\.(png|jpe?g|gif)$/);
+const otherImages = otherContext.keys().reduce((imagesObj, path) => {
+    const key = path.replace('./', '').replace(/\.(png|jpe?g|gif)$/, '');
+    imagesObj[key] = otherContext(path);
+    return imagesObj;
+}, {});
 
 export const hobbies = {
     books: booksImages,
     videogames: videogamesImages,
     drawings: drawingsImages,
+    other: otherImages,
 }
