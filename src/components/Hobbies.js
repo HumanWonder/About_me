@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useScrollAnimation } from "./Animation";
+import { useScrollAnimation, scrollToTop } from "./Animation";
 import { hobbies } from "../assets/Images";
 import "../styles/Hobbies.css";
 
@@ -137,6 +137,7 @@ const Hobbies = () => {
           </div>
         </div>
       ))}
+      <button className="scroll-to-top" onClick={scrollToTop}>↑</button>
     </div>
   );
   

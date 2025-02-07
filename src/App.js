@@ -13,7 +13,6 @@ const App = () => {
     <Router> {/* Envelopper toute l'application avec Router */}
       <div className="app">
         <nav className="navbar">
-          <div className="logo">LOGO</div>
           <Navbar /> {/* Navbar utilise useLocation ici */}
         </nav>
         <div className="page-content">

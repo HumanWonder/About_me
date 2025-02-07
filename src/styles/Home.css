@@ -15,23 +15,41 @@
 }
 
 .intro h1 {
+  margin-left:3%;
   font-size: 3rem;
   margin-bottom: 1rem;
   color: #333;
 }
 
 .intro p {
-  font-size: 1.2rem;
-  line-height: 1.6;
-  color: #555;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.2);
+  padding: 10px 20px;
+  text-shadow: 1px 1px 5px (226,125,96, 0.5);
+  font-size: 25px;
+  line-height: 1.8;
+  color: #2e2e2e;
   margin-bottom: 1rem;
 }
 
 .social-links {
+  background: rgba(255, 255, 255, 0.2);
+  padding: 10px 20px;
   display: flex;
-  gap: 1rem;
+  gap: 3rem;
   font-size: 1.2rem;
-  color: #e27d60;
+}
+
+.social-links a {
+  font-weight: 900;
+  color: #c56a50;
+  text-decoration: none;
+  text-shadow: 1px 1px 5px (0,0,0, 0.8);
+  transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+  color: #1d1614;
 }
 
 .avatar {
@@ -48,9 +66,11 @@
   height: 400px;
   border-radius: 50%;
   background-color: #e27d60;
-  position: relative; /* Assure que l'élément est bien positionné */
+  position: relative;
+  /* Assure que l'élément est bien positionné */
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  overflow: visible; /* Permet au ::before de dépasser */
+  overflow: visible;
+  /* Permet au ::before de dépasser */
 }
 
 .avatar-circle img {
@@ -64,13 +84,18 @@
 .avatar-circle::before {
   content: "";
   position: absolute;
-  width: 450px;  /* Un peu plus grand */
+  width: 450px;
+  /* Un peu plus grand */
   height: 450px;
   border-radius: 50%;
-  background-color:#e27c60be; /* Même couleur avec opacité */
-  top: -20px;  /* Décalage vers le haut */
-  left: -20px;  /* Décalage vers la gauche */
-  z-index: -1;  /* Derrière l'avatar */
+  background-color: #e27c60be;
+  /* Même couleur avec opacité */
+  top: -20px;
+  /* Décalage vers le haut */
+  left: -20px;
+  /* Décalage vers la gauche */
+  z-index: -1;
+  /* Derrière l'avatar */
 }
 
 

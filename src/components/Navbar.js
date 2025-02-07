@@ -10,7 +10,6 @@ const Navbar = () => {
     { id: "projects", label: "Projects", path: "/projects" },
     { id: "hobbies", label: "Hobbies", path: "/hobbies" },
     { id: "cv", label: "CV", path: "/cv" },
-    // { id: "game", label: "Game", path: "/game" }, Pas affiché mais considéré comme une page active
   ];
 
   // Gestion des onglets à afficher

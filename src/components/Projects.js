@@ -1,5 +1,5 @@
 import React from "react";
-import { useScrollAnimation} from "./Animation";
+import { useScrollAnimation, scrollToTop} from "./Animation";
 import { work } from "../assets/Images";
 import "../styles/Projects.css";
 
@@ -65,7 +65,9 @@ const Projects = () => {
           <div className="project-content">
             <div className="project-text-background">
               <h2>{project.title}</h2>
-              <p>{project.description}</p>
+              {project.description.length > 0 && (
+                <p>{project.description}</p>
+              )}
               {project.languages.length > 0 && (
                 <p>
                   <strong>Languages :</strong> {project.languages.join(", ")}
@@ -90,6 +92,7 @@ const Projects = () => {
           </div>
         </div>
       ))}
+      <button className="scroll-to-top" onClick={scrollToTop}>↑</button>
     </div>
   );
 };

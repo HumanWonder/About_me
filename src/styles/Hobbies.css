@@ -1,9 +1,11 @@
 .hobbies-container {
     display: flex;
     flex-direction: column;
-    gap: 0; /* Supprime l'espace entre les projets */
+    gap: 0;
+    /* Supprime l'espace entre les projets */
     padding: 0;
-    margin: 0; /* Enlever les marges pour aligner les projets */
+    margin: 0;
+    /* Enlever les marges pour aligner les projets */
 }
 
 .hobby-block {
@@ -11,7 +13,7 @@
     grid-template-columns: 1fr 1fr;
     align-items: center;
     height: 100vh;
-    padding: 2rem 10%;
+    padding: 2rem 5%;
     opacity: 0;
     transform: translateY(50px);
     /* Les éléments commencent légèrement en bas */
@@ -37,12 +39,21 @@
 }
 
 .hobby-content h2 {
-    font-size: 2.5rem;
-    color: #e27d60;
+    margin-bottom: 5px;
+    color: #c56a50;
+    font-size: 35px;
+    background: rgba(255, 255, 255, 0.5);
+    padding: 10px 20px;
+    border-radius: 10px;
+    text-shadow: 1px 2px 6px rgba(0, 0, 0, 0.25);
 }
 
 .hobby-content p {
-    font-size: 1.2rem;
+    font-size: 25px;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.4);
+    padding: 10px 20px;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
     line-height: 1.8;
 }
 
@@ -68,22 +79,32 @@
 
 /* Conteneur des images */
 .carousel-images {
-    width: 90%; /* Augmente la taille du conteneur */
+    width: 90%;
+    /* Augmente la taille du conteneur */
     text-align: center;
 }
 
 .carousel-image img {
-    max-width: 95%; /* Augmente la taille de l'image dans son conteneur */
-    max-height: 450px; /* Augmente la hauteur sans dépasser */
+    max-width: 95%;
+    /* Augmente la taille de l'image dans son conteneur */
+    max-height: 450px;
+    /* Augmente la hauteur sans dépasser */
     object-fit: contain;
     border-radius: 15px;
     box-shadow: 0 12px 18px rgba(0, 0, 0, 0.1);
 }
 
 .carousel-image figcaption {
+    margin-left: 12%;
+    max-width: 75%;
+    font-size: 20px;
     margin-top: 10px;
     font-style: italic;
     color: #555;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.4);
+    padding: 10px 20px;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
 }
 
 /* Boutons du carrousel */
@@ -121,4 +142,23 @@
     max-width: 80%;
     border-radius: 10px;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.scroll-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #e27d60;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 1.5rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease;
+}
+
+.scroll-to-top:hover {
+    background-color: #eeb2a1;
 }

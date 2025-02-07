@@ -2,8 +2,8 @@
 body {
   background: linear-gradient(168deg, rgba(226, 125, 96, 1) 11%, rgba(96, 197, 226, 1) 68%);
   background-size: cover; /* Assure que la texture couvre toute la page sans répétition */
-  background-image: url("https://www.transparenttextures.com/patterns/type.png"), linear-gradient(168deg, rgba(226, 125, 96, 1) 11%, rgba(96, 197, 226, 1) 68%);
-  background-attachment: scroll; /* Permet au fond de ne pas défiler avec la page */
+  background-image: url("https://www.transparenttextures.com/patterns/diagonales-decalees.png"), linear-gradient(168deg, rgba(226, 125, 96, 1) 11%, rgba(96, 197, 226, 1) 68%);
+  background-attachment: fixed; /* Permet au fond de ne pas défiler avec la page */
 }
 
 /* Conteneur principal */
@@ -52,29 +52,26 @@ body {
 }
 
 .project-content h2 {
-  /* background-color: #eeb2a1;
-  border-radius: 50%;
-  padding-left: 29%;
-  font-size: 2.5rem;
-  color: #da5a35; */
-  background: rgba(255, 255, 255, 0.3);
+  margin-bottom: 5px;
+  color: #c56a50;
+  font-size: 35px;
+  background: rgba(255, 255, 255, 0.5);
   padding: 10px 20px;
-  border-radius: 8px;
-  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  text-shadow: 1px 2px 6px rgba(0, 0, 0, 0.25);
 }
 
 .project-content p {
-  /* margin-top: 30px;
-  font-size: 1.2rem;
-  line-height: 1.8; */
-  background: rgba(255, 255, 255, 0.3);
-  padding: 10px 20px;
+  font-size: 20px;
   border-radius: 8px;
+  background: rgba(255, 255, 255, 0.4);
+  padding: 10px 20px;
   text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
+  line-height: 1.8;
 }
 
 .project-content a {
-  color: #e27d60;
+  color: #c56a50;
   text-decoration: none;
   font-weight: bold;
   transition: color 0.3s ease;
@@ -83,12 +80,6 @@ body {
 .project-content a:hover {
   color: #eeb2a1;
 }
-
-/* .project-text-background {
-  background-color: #4294afbb;
-  border-radius: 18%;
-  padding: 15px;
-} */
 
 .github_link {
   display: inline-flex;
@@ -144,13 +135,6 @@ body {
   margin-right: 10%;
 }
 
-/*Style légendes des images*/
-.project-images figcaption {
-  font-size: 0.9rem;
-  color: #666;
-  margin-top: 0.5rem;
-}
-
 .play_button {
   padding: 0.7rem 1.2rem;
   border: none;
@@ -186,4 +170,23 @@ body {
 .project-block.appear {
   opacity: 1;
   transform: translateY(0);
+}
+
+.scroll-to-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #e27d60;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 1.5rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease;
+}
+
+.scroll-to-top:hover {
+  background-color: #eeb2a1;
 }
