@@ -70,6 +70,7 @@ a:hover {
 }
 
 .navbar-buttons a {
+  font-weight: 800;
   padding: 0.7rem 1.2rem;
   border: none;
   background-color: #e27d60;

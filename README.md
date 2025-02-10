@@ -51,7 +51,7 @@ Le portfolio est accessible en ligne à l'adresse suivante : [Mon Portfolio](htt
 
 ## 📬 Contact
 
-Si vous souhaitez me contacter, n'hésitez pas à m'envoyer un message sur LinkedIn ou via mon adresse e-mail *(à ajouter si nécessaire)*.
+Si vous souhaitez me contacter, n'hésitez pas à m'envoyer un message sur les réseaux sociaux listés dans le portfolio, sur la page d'accueil ou dans mon CV.
 
 ---
 
