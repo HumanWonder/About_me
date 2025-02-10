@@ -17,7 +17,7 @@ Bienvenue sur mon portfolio ! Ce projet met en avant mes compétences, mes proje
 
 ## 🌍 Accéder au portfolio
 
-Le portfolio est accessible en ligne à l'adresse suivante : [Mon Portfolio](https://about-me-nine-red.vercel.app)
+Le portfolio est accessible en ligne à l'adresse suivante : [Mon Portfolio](https://about-iuavmhenn-humanwonders-projects.vercel.app)
 
 ## 🏗️ Fonctionnalités principales
 
