@@ -1,5 +1,5 @@
 import React from "react";
-import { useScrollAnimation, scrollToTop} from "./Animation";
+import { useScrollAnimation, scrollToTop} from "./Utils";
 import { work } from "../assets/Images";
 import "../styles/Projects.css";
 

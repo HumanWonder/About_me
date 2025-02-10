@@ -1,11 +1,3 @@
-/*  🌟 Fond avec gradient et texture fixe */
-body {
-  background: linear-gradient(168deg, rgba(226, 125, 96, 1) 11%, rgba(96, 197, 226, 1) 68%);
-  background-size: cover; /* Assure que la texture couvre toute la page sans répétition */
-  background-image: url("https://www.transparenttextures.com/patterns/diagonales-decalees.png"), linear-gradient(168deg, rgba(226, 125, 96, 1) 11%, rgba(96, 197, 226, 1) 68%);
-  background-attachment: fixed; /* Permet au fond de ne pas défiler avec la page */
-}
-
 /* Conteneur principal */
 .projects-container {
   min-height: 100vh;

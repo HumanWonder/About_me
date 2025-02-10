@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useScrollAnimation, scrollToTop } from "./Animation";
+import { useScrollAnimation, scrollToTop, getArrow } from "./Utils";
 import { hobbies } from "../assets/Images";
 import "../styles/Hobbies.css";
 
@@ -38,16 +38,16 @@ const HobbiesData = [
     ],
   },
   {
-    id:4,
+    id: 4,
     title: "Others~",
     description: "A mix of interests that you may have too !",
     images: [
-      {src: hobbies.other.BD1, caption: "I love building legos, it's a great way to relax and have fun. Here is BD1 from Star Wars:Fallen Order"},
-      {src: hobbies.other.Turtle_crochet, caption: "Knitting a scarf from DoctorWho was easier than I thought... Here is crochet project that I've done for a friend."},
-      {src: hobbies.other.learning_jap, caption: "Learning japanese slowly but surely, thanks to Duolingo, a couple of books and Youtube."},
-      {src: hobbies.other.baby_sunflower, caption: "Every year (for the past 3 years now), I've gotten into the habit of planting dwarf sunflowers in the garden —to the great dismay of my parents..."},
-      {src: hobbies.other.Elliot, caption: "I had to. His name's Elliot. By the time I'm writing this he's 15 years old and may leave us soon. I'll love him forever."},
-      {src: hobbies.other.blep_doggo, caption: "I love my dog... Have I already said that ?"},
+      { src: hobbies.other.BD1, caption: "I love building legos, it's a great way to relax and have fun. Here is BD1 from Star Wars:Fallen Order" },
+      { src: hobbies.other.Turtle_crochet, caption: "Knitting a scarf from DoctorWho was easier than I thought... Here is crochet project that I've done for a friend." },
+      { src: hobbies.other.learning_jap, caption: "Learning japanese slowly but surely, thanks to Duolingo, a couple of books and Youtube." },
+      { src: hobbies.other.baby_sunflower, caption: "Every year (for the past 3 years now), I've gotten into the habit of planting dwarf sunflowers in the garden —to the great dismay of my parents..." },
+      { src: hobbies.other.Elliot, caption: "I had to. His name's Elliot. By the time I'm writing this he's 15 years old and may leave us soon. I'll love him forever." },
+      { src: hobbies.other.blep_doggo, caption: "I love my dog... Have I already said that ?" },
 
     ]
   }
@@ -96,13 +96,13 @@ const Hobbies = () => {
             <h2>{hobby.title}</h2>
             <p>{hobby.description}</p>
           </div>
-  
+
           {/* Carrousel d'images */}
           <div className="carousel">
             <button className="carousel-button" onClick={() => prevImage(hobbyIndex)}>
-              &#9665;
+              <img src={getArrow("left",hobbyIndex)} alt="Left_arrow"></img>
             </button>
-  
+
             <div className="carousel-images">
               <figure className="carousel-image">
                 <img
@@ -110,7 +110,7 @@ const Hobbies = () => {
                   alt={`Hobby ${hobbyIndex}`}
                 />
                 <figcaption>{hobby.images[imageIndexes[hobbyIndex]].caption}</figcaption>
-  
+
                 {/* Vérifie si l'image correspond à Tunic */}
                 {hobby.images[imageIndexes[hobbyIndex]].src === hobbies.videogames.tunic_logo &&
                   !isSecretRevealed && (
@@ -118,7 +118,7 @@ const Hobbies = () => {
                       Reveal Secret
                     </button>
                   )}
-  
+
                 {/* Affiche l'image secrète si le bouton est cliqué */}
                 {hobby.images[imageIndexes[hobbyIndex]].src === hobbies.videogames.tunic_logo &&
                   isSecretRevealed && (
@@ -130,9 +130,10 @@ const Hobbies = () => {
                   )}
               </figure>
             </div>
-  
+
             <button className="carousel-button" onClick={() => nextImage(hobbyIndex)}>
-              &#9655;
+              <img src={getArrow("right",hobbyIndex)} alt="Right_arrow"></img>
+
             </button>
           </div>
         </div>
@@ -140,7 +141,7 @@ const Hobbies = () => {
       <button className="scroll-to-top" onClick={scrollToTop}>↑</button>
     </div>
   );
-  
+
 };
 
 export default Hobbies;

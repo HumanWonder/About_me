@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import { hobbies } from "../assets/Images";
 
 export const useScrollAnimation = (className) => {
   useEffect(() => {
@@ -30,4 +31,24 @@ export function scrollToTop() {
     top: 0,
     behavior: 'smooth'
   });
+}
+
+const arrowMap = {
+  left: {
+    0: hobbies.videogames.pixel_arrow_left,
+    1: hobbies.other.other_left,
+    2: hobbies.drawings.drawn_left,
+    default: hobbies.other.other_left,
+  },
+  right: {
+    0: hobbies.videogames.pixel_arrow_right,
+    1: hobbies.other.others_right,
+    2: hobbies.drawings.drawn_right,
+    default: hobbies.other.others_right,
+  }
+};
+
+export function getArrow(direction, index) {
+  console.log(direction, index);
+  return arrowMap[direction]?.[index] || arrowMap[direction]?.default;
 }
