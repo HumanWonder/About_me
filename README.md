@@ -7,7 +7,7 @@ Bienvenue sur mon portfolio ! Ce projet met en avant mes compétences, mes proje
 - **Frontend** : React, CSS
 - **Routing** : React Router
 - **Backend** : N/A (Portfolio statique pour l'instant)
-- **Déploiement** : Netlify
+- **Déploiement** : Vercel (with Github Auth)
 
 ## 📂 Structure du projet
 
@@ -17,7 +17,7 @@ Bienvenue sur mon portfolio ! Ce projet met en avant mes compétences, mes proje
 
 ## 🌍 Accéder au portfolio
 
-Le portfolio est accessible en ligne à l'adresse suivante : [Mon Portfolio](https://votre-url.com) *(remplace par ton URL)*
+Le portfolio est accessible en ligne à l'adresse suivante : [Mon Portfolio](https://about-me-nine-red.vercel.app)
 
 ## 🏗️ Fonctionnalités principales
 
