@@ -1,38 +1,30 @@
-import React, { useState } from "react";
-import { CSSTransition } from "react-transition-group";
+import React from "react";
+import { BrowserRouter as Router, Route, Routes} from 'react-router-dom'; // Import des composants de react-router-dom
 import Home from "./components/Home";
+import Navbar from "./components/Navbar";
 import Projects from "./components/Projects";
 import Hobbies from "./components/Hobbies";
+import CV from "./components/CV";
 import "./styles/App.css";
 
 const App = () => {
-  const [page, setPage] = useState("home");
-
-  const renderPage = () => {
-    switch (page) {
-      case "projects":
-        return <Projects setPage={setPage} />;
-      case "hobbies":
-        return <Hobbies setPage={setPage} />;
-      default:
-        return <Home setPage={setPage} />;
-    }
-  };
 
   return (
-    <div className="app-container">
-      <CSSTransition
-        in={true}
-        appear={true}
-        key={page}
-        timeout={500}  // Durée de la transition
-        classNames="slide"
-      >
+    <Router> {/* Envelopper toute l'application avec Router */}
+      <div className="app">
+        <nav className="navbar">
+          <Navbar /> {/* Navbar utilise useLocation ici */}
+        </nav>
         <div className="page-content">
-          {renderPage()}
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/projects" element={<Projects />} />
+            <Route path="/hobbies" element={<Hobbies />} />
+            <Route path="/cv" element={<CV />} />
+          </Routes>
         </div>
-      </CSSTransition>
-    </div>
+      </div>
+    </Router>
   );
 };
 

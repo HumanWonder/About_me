@@ -1,43 +1,89 @@
-body {
-  font-family: "Arial", sans-serif;
+/* Global styles */
+* {
   margin: 0;
   padding: 0;
-  background-color: #f9f9f9;
+  box-sizing: border-box;
 }
 
-.app-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
-}
-.page-content {
-  position: absolute;
-  width: 100%;
+body {
+  /*  🌟 Fond avec gradient fixe */
+  background: linear-gradient(168deg, rgba(226, 125, 96, 1) 11%, rgba(96, 197, 226, 1) 68%);
+  background-attachment: fixed;
+  /* Permet au fond de ne pas défiler avec la page */
+  color: #333;
+  /* Neutral text color */
+  margin: 0;
+  padding: 0;
   height: 100%;
+  overflow-x: hidden;
+}
+
+a {
+  text-decoration: none;
+  color: #e27d60;
+}
+
+a:hover {
+  color: #eeb2a1;
+}
+
+/* Main Section */
+.main-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: calc(100vh - 80px);
+  padding: 0 10%;
+}
+
+.page-content {
+  height: 93vh;
+  width: 100vw;
+}
+
+/* color: #e27d60*/
+.page-grid {
+  display: grid;
+  grid-template-rows: auto 1fr;
+  width: 80%;
+  margin: auto;
+}
+
+/* Navbar */
+.navbar {
+  position: sticky;
   top: 0;
-  left: 0;
-  overflow: hidden;
-  transition: transform 0.5s ease-in-out;  /* Transition du glissement */
+  z-index: 10;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: #ffffffaf;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.slide-enter {
-  transform: translateX(100%);  /* Démarrer la transition depuis la droite */
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #e27d60;
+  /* Pastel accent */
 }
 
-.slide-enter-active {
-  transform: translateX(0);  /* Fin de la transition avec la page en place */
+.navbar-buttons a {
+  padding: 0.7rem 1.2rem;
+  border: none;
+  background-color: #e27d60;
+  color: white;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
 }
 
-.slide-exit {
-  transform: translateX(0);  /* La page commence à sa position initiale */
-}
-
-.slide-exit-active {
-  transform: translateX(-100%);  /* La page glisse vers la gauche */
-}
-
-.slide-enter-done {
-  transform: translateX(0);  /* Fin de la transition avec la page en place */
+.navbar-buttons a:hover {
+  transform: scale(1.1);
+  /* Agrandit légèrement au survol */
+  background-color: #eeb2a1;
+  /* Change la couleur */
+  color: rgb(185, 72, 72);
+  font-weight: bolder;
 }

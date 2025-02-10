@@ -1,0 +1,43 @@
+.content {
+    padding-left: 1%; /* Décalage global */
+    max-width: 80%;
+    margin: auto;
+}
+
+.content h1 {
+    margin-bottom: 20px; /* Espacement entre le titre et le reste */
+    font-size: 40px;
+}
+
+.content p {
+    margin-bottom: 15px; /* Espacement entre le texte et le bouton */
+    font-size: 30px;
+}
+
+.content a {
+    display: inline-block; /* Permet à margin-bottom de fonctionner */
+    margin-bottom: 20px; /* Espacement entre le bouton et l'aperçu du CV */
+}
+
+.cv-preview {
+    position: relative;
+    /* left: 5%; */
+}
+
+.CV_download {
+    margin-top: 10px;
+    padding: 8px 12px;
+    font-size: 1rem;
+    font-weight: bold;
+    background-color: #e27d60;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.CV_download:hover {
+    background-color: #eeb2a1;
+    color: #e27d60;
+}
