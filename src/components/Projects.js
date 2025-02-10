@@ -48,7 +48,7 @@ const projectsData = [
 ];
 
 const redirectToGame = () => {
-  window.location.href = process.env.PUBLIC_URL+"make-your-game-different-maps/index.html";
+  window.location.href = process.env.PUBLIC_URL+"/make-your-game-different-maps/index.html";
 };
 
 const Projects = () => {
