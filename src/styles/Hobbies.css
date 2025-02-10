@@ -1,0 +1,170 @@
+.hobbies-container {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    /* Supprime l'espace entre les projets */
+    padding: 0;
+    margin: 0;
+    /* Enlever les marges pour aligner les projets */
+}
+
+.hobby-block {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    height: 100vh;
+    padding: 2rem 5%;
+    opacity: 0;
+    transform: translateY(50px);
+    /* Les éléments commencent légèrement en bas */
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+
+}
+
+/* Ajouté dynamiquement par le JS */
+.hobby-block.visible {
+    opacity: 1;
+    transform: translateY(10);
+}
+
+/* Texte du projet */
+.hobby-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* Centrer verticalement */
+    gap: 1rem;
+    max-width: 90%;
+    /* Limite la largeur du texte */
+}
+
+.hobby-content h2 {
+    margin-bottom: 5px;
+    color: #c56a50;
+    font-size: 35px;
+    background: rgba(255, 255, 255, 0.5);
+    padding: 10px 20px;
+    border-radius: 10px;
+    text-shadow: 1px 2px 6px rgba(0, 0, 0, 0.25);
+}
+
+.hobby-content p {
+    font-size: 23px;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.4);
+    padding: 10px 20px;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
+    line-height: 1.8;
+}
+
+.hobby-content a {
+    color: #e27d60;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.hobby-content a:hover {
+    color: #eeb2a1;
+}
+
+/* Style du carrousel */
+.carousel {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    margin-top: 15px;
+}
+
+/* Conteneur des images */
+.carousel-images {
+    width: 90%;
+    /* Augmente la taille du conteneur */
+    text-align: center;
+}
+
+.carousel-image img {
+    max-width: 95%;
+    /* Augmente la taille de l'image dans son conteneur */
+    max-height: 450px;
+    /* Augmente la hauteur sans dépasser */
+    object-fit: contain;
+    border-radius: 15px;
+    box-shadow: 0 12px 18px rgba(0, 0, 0, 0.1);
+}
+
+.carousel-image figcaption {
+    margin-left: 12%;
+    max-width: 75%;
+    font-size: 20px;
+    margin-top: 10px;
+    font-style: italic;
+    color: #555;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.4);
+    padding: 10px 20px;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Boutons du carrousel */
+.carousel-button {
+    max-width: 30%;
+    max-height: 30%;
+    background: none;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.carousel-button img {
+    max-width: 30%;
+    max-height: 30%;
+}
+
+.carousel-button:hover {
+    transform: scale(1.5);
+}
+
+.reveal-secret-btn {
+    margin-top: 10px;
+    padding: 8px 12px;
+    font-size: 1rem;
+    font-weight: bold;
+    background-color: #e27d60;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.reveal-secret-btn:hover {
+    background-color: #eeb2a1;
+}
+
+.secret-image {
+    margin-top: 10px;
+    max-width: 80%;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.scroll-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #e27d60;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 1.5rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease;
+}
+
+.scroll-to-top:hover {
+    background-color: #eeb2a1;
+}
