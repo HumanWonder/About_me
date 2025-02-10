@@ -49,27 +49,29 @@ a:hover {
   margin: auto;
 }
 
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #e27d60;
+}
+
 /* Navbar */
 .navbar {
   position: sticky;
   top: 0;
   z-index: 10;
-  display: flex;
-  justify-content: flex-end;
   align-items: center;
-  padding: 1rem 2rem;
+  padding: 0.8rem 2rem;
   background-color: #ffffffaf;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
-
-.logo {
-  font-size: 1.5rem;
-  font-weight: bold;
-  color: #e27d60;
-  /* Pastel accent */
+.navbar-buttons {
+  display: flex;
+  justify-content: space-evenly;
 }
 
 .navbar-buttons a {
+  font-size: 20px;
   font-weight: 800;
   padding: 0.7rem 1.2rem;
   border: none;
@@ -81,7 +83,7 @@ a:hover {
 }
 
 .navbar-buttons a:hover {
-  transform: scale(1.1);
+  transform: scale(1.2);
   /* Agrandit légèrement au survol */
   background-color: #eeb2a1;
   /* Change la couleur */
