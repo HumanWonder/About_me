@@ -54,6 +54,7 @@
 }
 
 #startButton {
+    background-color:rgb(32, 81, 241);
     position: absolute;
     top: 40%;
     left: 52%;
@@ -80,6 +81,7 @@
 }
 
 #restartButton {
+    background-color:rgb(32, 81, 241);
     width: 120px;
     height: 120px;
     top: 43%;
@@ -88,6 +90,7 @@
 }
 
 #resumeButton {
+    background-color:rgb(32, 81, 241);
     height: 120px;
     width: 120px;
     top: 43%;
@@ -144,6 +147,7 @@
 }
 
 #newGameButton {
+    background-color:rgb(32, 81, 241);
     height: 140px;
     width: 140px;
     top: 50%;

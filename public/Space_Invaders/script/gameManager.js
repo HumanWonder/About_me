@@ -33,6 +33,7 @@ function gameStart() {
     // Lancer l'animation
     window.requestAnimationFrame(animate);
 }
+window.gameStart = gameStart;
 
 function pauseGame() {
     //stops some functions 
