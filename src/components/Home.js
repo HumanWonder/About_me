@@ -5,7 +5,7 @@ const Home = ({ setPage }) => {
   return (
     <main className="main-section">
       <div className="intro">
-        <h1>Hello there, I'm Axelle</h1>
+        <h1>Hello there,<span><br></br></span> I'm Axelle</h1>
         <p>
           Currently training to become a full-stack developer, I am exploring the creation of diverse and enriching projects.
         </p>
@@ -20,7 +20,7 @@ const Home = ({ setPage }) => {
       </div>
       <div className="avatar">
         <div className="avatar-circle">
-          <img className="avatar-circle" src="https://avatar.iran.liara.run/public/97" alt="avatar_img"></img>
+          <img src="https://avatar.iran.liara.run/public/97" alt="avatar_img"></img>
         </div>
       </div>
     </main>
