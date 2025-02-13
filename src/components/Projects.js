@@ -1,5 +1,5 @@
 import React from "react";
-import { useScrollAnimation, scrollToTop} from "./Utils";
+import { useScrollAnimation, scrollToTop } from "./Utils";
 import { work } from "../assets/Images";
 import "../styles/Projects.css";
 
@@ -48,15 +48,25 @@ const projectsData = [
 ];
 
 const redirectToGame = () => {
-  window.location.href = process.env.PUBLIC_URL+"/Space_Invaders/index.html";
+  window.location.href = process.env.PUBLIC_URL + "/Space_Invaders/index.html";
 };
 
 const Projects = () => {
 
   useScrollAnimation("project-block");
 
+  const [enlargedImage, setEnlargedImage] = React.useState(null);
+
+  const handleImageClick = (image) => {
+    setEnlargedImage(image === enlargedImage ? null : image);
+  };
+
   return (
     <div className="projects-container">
+      {/* Overlay pour fermer l'image */}
+      {enlargedImage && (
+        <div className={`overlay ${enlargedImage ? "visible" : ""}`} onClick={() => setEnlargedImage(null)} />
+      )}
       {projectsData.map((project, index) => (
         <div
           key={project.id}
@@ -86,8 +96,10 @@ const Projects = () => {
           </div>
           <div className="project-images">
             {project.images.map((image, i) => (
-              <img className={`${project.id === 2 ? "second-project" : ""}`}
-                key={i} src={image} alt={`${project.title} ${i + 1}`} />
+              <img className={`project-image ${enlargedImage === image ? "enlarged" : ""} ${project.id === 2 ? "second-project" : ""}`}
+                key={i} src={image}
+                alt={`${project.title} ${i + 1}`}
+                onClick={() => handleImageClick(image)} />
             ))}
           </div>
         </div>

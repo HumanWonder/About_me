@@ -106,9 +106,26 @@
   box-shadow: 0 20px 15px rgba(0, 0, 0, 0.1);
 }
 
-.project-images img:nth-child(odd),
+/* Positionnement pair/impair */
+.project-images img:nth-child(odd) {
+  margin-left: 10%;
+  /* Décale les images impaires à gauche */
+}
+
 .project-images img:nth-child(even) {
-  margin: 0;
+  margin-left: auto;
+  /* Décale les images paires à droite */
+  margin-right: 10%;
+}
+
+/* Styles spécifiques aux images du deuxième projet de base trop grandes */
+.project-images .second-project {
+  max-width: 50%;
+  /* Réduit la taille des images */
+  max-height: 50%;
+  /* Limite la hauteur */
+  margin: 0 auto;
+  /* Centre les images */
 }
 
 .play_button {
@@ -158,28 +175,53 @@
 
 /* Responsive */
 @media (max-width: 1024px) {
-  .project-block {
-    grid-template-columns: 1fr;
-    height: auto;
-    padding: 2rem 5%;
+
+  .project-images img:nth-child(odd),
+  .project-images img:nth-child(even) {
+    margin: 0;
   }
 
-  .project-content {
-    text-align: center;
-    max-width: 100%;
+  .project-images img {
+    max-width: 60%;
+    /* Taille réduite par défaut */
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
   }
 
-  .project-content h2 {
-    font-size: 24px;
+  /* Effet d'agrandissement */
+  .project-images img.enlarged {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(1.5);
+    max-width: 50%;
+    max-height: 50%;
+    z-index: 200;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    border: 5px solid white; /* Test visuel */
+    background-color: white; /* Ajout pour éviter d’être assombri par l’overlay */
   }
 
-  .project-content p {
-    font-size: 16px;
-    line-height: 1.5;
+  /* Fond semi-transparent quand une image est agrandie */
+  .overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 100;
+    display: none;
+  }
+
+  .overlay.visible {
+    display: block;
   }
 }
 
-@media (max-width: 768px) {
+
+@media (max-width: 812px) {
   .project-content h2 {
     font-size: 22px;
   }
@@ -189,10 +231,35 @@
     line-height: 1.4;
   }
 
+  .project-images img {
+    max-width: 60%;
+    /* Réduction de la taille */
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+  }
+
+  .project-images img.enlarged {
+    transform: scale(1.5);
+  }
+  .overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 999;
+    display: none;
+  }
+
+  .overlay.visible {
+    display: block;
+  }
+
   .scroll-to-top {
     bottom: 15px;
     right: 15px;
     padding: 8px 15px;
     font-size: 1.2rem;
   }
-} 
+}

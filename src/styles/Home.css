@@ -10,7 +10,8 @@
 
 .intro {
   flex: 1;
-  max-width: 100%;
+  max-width: 95%;
+  padding-right: 2rem;
 }
 
 .intro h1 {
