@@ -176,19 +176,40 @@
 
 /* Responsive */
 @media (max-width: 1024px) {
+  .play_button {
+    display: none;
+  }
+  .project-block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .project-content p {
+    font-size: 18px;
+    ;
+  }
+  .github_link {
+    margin-bottom: 1rem; /* Espacement entre les images et le lien */
+  }
 
   .project-images img:nth-child(odd),
   .project-images img:nth-child(even) {
+    order: 1;
+    justify-content: center;
+    width:100%;
     margin: 0;
   }
 
   .project-images img {
-    max-width: 60%;
+    max-width: 70%;
     /* Taille réduite par défaut */
     cursor: pointer;
     transition: transform 0.3s ease-in-out;
   }
-  /* Fond semi-transparent quand une image est agrandie */
+
+  /* Overlay (fond sombre derrière l'image agrandie) */
   .overlay {
     position: fixed;
     top: 0;
@@ -200,25 +221,47 @@
     display: none;
   }
 
-  /* Effet d'agrandissement */
-  .project-images img.enlarged {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%) scale(1.5);
-    max-width: 50%;
-    max-height: 50%;
-    z-index: 200;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
-    border-radius: 10px;
-    border: 5px solid white; /* Test visuel */
-    background-color: white; /* Ajout pour éviter d’être assombri par l’overlay */
-  }
-
-
   .overlay.visible {
     display: block;
   }
+
+  /* Image agrandie */
+  .enlarged-image {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 80vw;
+    max-height: 80vh;
+    z-index: 200;
+    /* L'image passe au premier plan */
+    border-radius: 10px;
+    border: 5px solid white;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+  }
+
+  /* Empêche l'overlay de cacher complètement l'image */
+  .project-images img.enlarged {
+    z-index: 200;
+  }
+
+  /* Animation */
+  .enlarged-image {
+    animation: fadeIn 0.3s ease-in-out;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translate(-50%, -50%) scale(0.8);
+    }
+
+    to {
+      opacity: 1;
+      transform: translate(-50%, -50%) scale(1);
+    }
+  }
+
 }
 
 
@@ -229,7 +272,7 @@
 
   .project-content p {
     font-size: 14px;
-    line-height: 1.4;
+    line-height: 1.8;
   }
 
   .project-images img {
@@ -239,9 +282,7 @@
     transition: transform 0.3s ease-in-out;
   }
 
-  .project-images img.enlarged {
-    transform: scale(1.5);
-  }
+  /* Overlay (fond sombre derrière l'image agrandie) */
   .overlay {
     position: fixed;
     top: 0;
@@ -249,13 +290,51 @@
     width: 100%;
     height: 100%;
     background: rgba(0, 0, 0, 0.6);
-    z-index: 999;
+    z-index: 100;
     display: none;
   }
 
   .overlay.visible {
     display: block;
   }
+
+  /* Image agrandie */
+  .enlarged-image {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 85vw;
+    max-height: 85vh;
+    z-index: 200;
+    /* L'image passe au premier plan */
+    border-radius: 10px;
+    border: 5px solid white;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+  }
+
+  /* Empêche l'overlay de cacher complètement l'image */
+  .project-images img.enlarged {
+    z-index: 200;
+  }
+
+  /* Animation */
+  .enlarged-image {
+    animation: fadeIn 0.3s ease-in-out;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translate(-50%, -50%) scale(0.8);
+    }
+
+    to {
+      opacity: 1;
+      transform: translate(-50%, -50%) scale(1.2);
+    }
+  }
+
 
   .scroll-to-top {
     bottom: 15px;

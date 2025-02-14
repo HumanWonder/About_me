@@ -91,7 +91,7 @@ const Projects = () => {
               View Github repository
             </a>
             {project.title === "Space Invaders" && (
-              <button className="play_button" onClick={redirectToGame}>Wanna play?</button>
+              <button className="play_button" onClick={redirectToGame}>Wanna play? (Keyboard needed)</button>
             )}
           </div>
           <div className="project-images">
@@ -104,6 +104,10 @@ const Projects = () => {
           </div>
         </div>
       ))}
+      {/* Image agrandie au premier plan */}
+      {enlargedImage && (
+        <img src={enlargedImage} alt="Agrandie" className="enlarged-image" />
+      )}
       <button className="scroll-to-top" onClick={scrollToTop}>↑</button>
     </div>
   );
