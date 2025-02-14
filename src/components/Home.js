@@ -5,7 +5,11 @@ const Home = ({ setPage }) => {
   return (
     <main className="main-section">
       <div className="intro">
-        <h1>Hello there,<span><br></br></span> I'm Axelle</h1>
+        <h1>
+          Hello there,<br />
+          <span className="second-line">I'm Axelle</span>
+        </h1>
+
         <p>
           Currently training to become a full-stack developer, I am exploring the creation of diverse and enriching projects.
         </p>

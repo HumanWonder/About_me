@@ -171,6 +171,7 @@
 
 .scroll-to-top:hover {
   background-color: #eeb2a1;
+  color: black;
 }
 
 /* Responsive */
@@ -186,6 +187,17 @@
     /* Taille réduite par défaut */
     cursor: pointer;
     transition: transform 0.3s ease-in-out;
+  }
+  /* Fond semi-transparent quand une image est agrandie */
+  .overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 100;
+    display: none;
   }
 
   /* Effet d'agrandissement */
@@ -203,17 +215,6 @@
     background-color: white; /* Ajout pour éviter d’être assombri par l’overlay */
   }
 
-  /* Fond semi-transparent quand une image est agrandie */
-  .overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.6);
-    z-index: 100;
-    display: none;
-  }
 
   .overlay.visible {
     display: block;

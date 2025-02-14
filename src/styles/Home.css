@@ -4,18 +4,19 @@
     "intro avatar"
     "buttons avatar";
   grid-template-columns: 1fr 1fr;
-  width: 100%;
+  width: 90%;
   margin: auto;
 }
 
 .intro {
+  left: 20%;
   flex: 1;
-  max-width: 95%;
+  max-width: 100%;
   padding-right: 2rem;
 }
 
 .intro h1 {
-  font-size: 2.5rem;
+  font-size: 3rem;
   font-weight: 800;
   margin-left: 1rem;
   margin-bottom: 1rem;
@@ -23,24 +24,35 @@
   text-shadow: 1px 2px 6px rgba(255, 255, 255, 1);
 }
 
+.second-line {
+  display: inline-block;
+  /* Nécessaire pour que margin-left fonctionne */
+  margin-left: 4em;
+}
+
 .intro p {
-  border-radius: 8px;
+  border-radius: 16px;
   background: rgba(255, 255, 255, 0.1);
   padding: 10px 20px;
   text-shadow: 1px 2px 6px rgba(255, 255, 255, 0.6);
-  font-size: 25px;
+  font-size: 23px;
   font-weight: 300;
   line-height: 1.8;
   color: #2e2e2e;
-  margin-bottom: 1rem;
+  margin: 2rem 1rem 2rem 1em;
+  width: 95%;
+  max-width: fit-content;
 }
 
 .social-links {
   background: rgba(255, 255, 255, 0.1);
   padding: 10px 20px;
-  display: flex;
-  gap: 2rem;
+  display: inline-flex;
+  gap: 4rem;
   font-size: 1.4rem;
+  border-radius: 16px;
+  margin: 2rem 1rem 2rem 1em;
+
 }
 
 .social-links a {
@@ -64,12 +76,11 @@
 }
 
 .avatar-circle {
-  width: 300px;
-  height: 300px;
+  width: 375px;
+  height: 375px;
   border-radius: 50%;
-  background-color: #e27d60;
   position: relative;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
   overflow: visible;
 }
 
@@ -83,8 +94,8 @@
 .avatar-circle::before {
   content: "";
   position: absolute;
-  width: 350px;
-  height: 350px;
+  width: 410px;
+  height: 410px;
   border-radius: 50%;
   background-color: #e27c60be;
   top: -20px;
@@ -93,7 +104,7 @@
 }
 
 /* Responsive */
-@media (max-width: 1024px) {
+@media (max-width: 1128px) {
   .main-section {
     width: 95%;
     grid-gap: 1rem;
@@ -119,7 +130,7 @@
   }
 }
 
-@media (max-width: 850px) {
+@media (max-width: 978px) {
   .main-section {
     display: flex;
     flex-direction: column;
@@ -130,7 +141,8 @@
   }
 
   .avatar {
-    order: -1; /* Avatar en premier */
+    order: -1;
+    /* Avatar en premier */
     margin-bottom: 1rem;
   }
 
@@ -140,6 +152,9 @@
 
   .intro h1 {
     font-size: 1.8rem;
+    margin-left: 0;
+  }
+  .second-line {
     margin-left: 0;
   }
 
@@ -163,6 +178,7 @@
     align-items: center;
     font-size: 1.2rem;
     gap: 1rem;
+    margin-top: 0;
   }
 }
 
@@ -192,6 +208,7 @@
   }
 
   .social-links {
+    margin-top: 0;
     font-size: 1rem;
   }
 }
