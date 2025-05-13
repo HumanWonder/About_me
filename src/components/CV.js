@@ -8,7 +8,7 @@ const CV = () => {
             <br />
             <p>Feel free to download or view my resume below:</p>
             {/* Bouton de téléchargement */}
-            <a href="/assets/cv/Axelle-FOUQUEMBERG.pdf" download="Axelle-FOUQUEMBERG.pdf">
+            <a href="/public/assets/cv/Axelle Fouquemberg cv.pdf" download="Axelle-FOUQUEMBERG.pdf">
                 <button className="CV_download">Download</button>
             </a>
             <br />
