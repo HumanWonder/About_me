@@ -169,3 +169,7 @@
 .scroll-to-top:hover {
     background-color: #eeb2a1;
 }
+
+@media (max-width: 1024px) {
+    
+}
