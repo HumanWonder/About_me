@@ -18,7 +18,7 @@ const Home = ({ setPage }) => {
           <a href="https://github.com/HumanWonder"><span>Github</span></a>
           <a href="https://www.linkedin.com/in/axelle-fouquemberg-33336327b/"><span>LinkedIn</span></a>
           <a href="https://discordapp.com/users/601798056027095051"><span>Discord</span></a>
-          <a href="/assets/cv/Axelle-FOUQUEMBERG.pdf" target="_blank" rel="noopener noreferrer"><span>CV</span></a>
+          <a href="/assets/cv/Axelle-Fouquemberg-cv.pdf" target="_blank" rel="noopener noreferrer"><span>CV</span></a>
         </div>
 
       </div>
