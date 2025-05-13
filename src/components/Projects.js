@@ -31,6 +31,14 @@ const projectsData = [
   },
   {
     id: 4,
+    title: "Internship project",
+    description: "A project I worked on during my internship at Blob Formation. The goal was to create a web application for managing nursery owners and temporary workers. The project was not finished after my two months as an intern but, considering I was working alone, I'm quite proud of the result.",
+    languages: ["Rust", "NextJS", "PostgreSQL"],
+    github: "https://github.com/HumanWonder/Nounous_en_force",
+    images: [work.nnef.nnef_Home, work.nnef.nnef_temp_profile],
+  },
+  {
+    id: 5,
     title: "Go-reloaded",
     description: "The first program from the training that started in May 2022. A text processing program. When learning, it’s important to look back and see how much progress has been made. Nothing has been modified since.",
     languages: ["Golang"],
@@ -38,7 +46,7 @@ const projectsData = [
     images: [work.go_reloaded.First, work.go_reloaded.Second],
   },
   {
-    id: 5,
+    id: 6,
     title: "See more →",
     description: "",
     languages: [],
