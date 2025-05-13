@@ -169,3 +169,61 @@
 .scroll-to-top:hover {
     background-color: #eeb2a1;
 }
+
+@media (max-width: 1024px) {
+    .hobby-block {
+        display: flex;
+        /* remplace le grid d’origine */
+        flex-direction: column;
+        /* empile verticalement */
+        align-items: center;
+        /* centre horizontalement */
+        text-align: center;
+        padding: 2rem 2rem;
+        /* marge latérale réduite */
+    }
+
+    .hobby-content {
+        max-width: 90%;
+    }
+
+    /* typographie cohérente avec projects */
+    .hobby-content h2 {
+        font-size: 22px;
+    }
+
+    .hobby-content p {
+        font-size: 18px;
+    }
+
+    /* images / carrousel : largeur raisonnable */
+    .carousel-image img {
+        /* par analogie à .project-images img */
+        max-width: 70%;
+        cursor: pointer;
+        transition: transform 0.3s ease-in-out;
+    }
+}
+
+@media (max-width: 812px) {
+
+    .hobby-block {
+        padding: 2rem 1rem;
+        /* encore moins de marge latérale */
+    }
+
+    .hobby-content h2 {
+        font-size: 20px;
+    }
+
+    .hobby-content p {
+        font-size: 14px;
+        line-height: 1.8;
+    }
+
+    .carousel-image img {
+        max-width: 60%;
+    }
+
+    /* un peu plus étroit */
+}

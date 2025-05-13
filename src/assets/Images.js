@@ -18,7 +18,6 @@ const spaceInvadersImages = spaceInvadersContext.keys().reduce((imagesObj, path)
 }, {});
 
 
-// Répétez la même chose pour les autres répertoires d'images
 const smartRoadContext = require.context('../assets/Smart_Road_Images', false, /\.(png|jpe?g|gif)$/);
 const smartRoadImages = smartRoadContext.keys().reduce((imagesObj, path) => {
     const key = path.replace('./', '').replace(/\.(png|jpe?g|gif)$/, '');
@@ -30,6 +29,13 @@ const multiplayerContext = require.context('../assets/multiplayer_img', false, /
 const multiplayerImages = multiplayerContext.keys().reduce((imagesObj, path) => {
     const key = path.replace('./', '').replace(/\.(png|jpe?g|gif)$/, '');
     imagesObj[key] = multiplayerContext(path);
+    return imagesObj;
+}, {});
+
+const nnefContext = require.context('../assets/Nnef_Img', false, /\.(png|jpe?g|gif)$/);
+const nnefImages = nnefContext.keys().reduce((imagesObj, path) => {
+    const key = path.replace('./', '').replace(/\.(png|jpe?g|gif)$/, '');
+    imagesObj[key] = nnefContext(path);
     return imagesObj;
 }, {});
 
@@ -52,6 +58,7 @@ export const work = {
     spaceInvaders: spaceInvadersImages,
     smartRoad: smartRoadImages,
     multiplayer: multiplayerImages,
+    nnef: nnefImages,
     go_reloaded: go_reloadedImages,
     github: githubImages,
 };

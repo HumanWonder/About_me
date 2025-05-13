@@ -6,10 +6,8 @@
   display: flex;
   flex-direction: column;
   gap: 0;
-  /* Supprime l'espace entre les projets */
   padding: 0;
   margin: 0;
-  /* Enlever les marges pour aligner les projets */
 }
 
 /* Bloc de projet */
@@ -18,15 +16,12 @@
   grid-template-columns: 1fr 1fr;
   align-items: center;
   height: 100vh;
-  /* Chaque projet occupe toute la hauteur de la fenêtre */
   padding: 2rem 10%;
   opacity: 0;
   transform: translateY(50px);
-  /* Les éléments commencent légèrement en bas */
   transition: opacity 0.6s ease-out, transform 0.6s ease-out;
 }
 
-/* Ajouté dynamiquement par le JS */
 .project-block.visible {
   opacity: 1;
   transform: translateY(0);
@@ -37,10 +32,9 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  /* Centrer verticalement */
   gap: 1rem;
   max-width: 90%;
-  /* Limite la largeur du texte */
+  text-align: center;
 }
 
 .project-content h2 {
@@ -51,7 +45,6 @@
   padding: 10px 20px;
   border-radius: 10px;
   text-shadow: 1px 2px 6px rgba(255, 255, 255, 0.8);
-
 }
 
 .project-content p {
@@ -60,7 +53,6 @@
   background: rgba(255, 255, 255, 0.4);
   padding: 10px 20px;
   text-shadow: 1px 2px 6px rgba(255, 255, 255, 0.3);
-
   line-height: 1.8;
 }
 
@@ -105,14 +97,11 @@
   justify-content: center;
   align-items: center;
   gap: 2rem;
-  /*Espacement entre les images*/
 }
 
 .project-images img {
   max-width: 90%;
-  /* Limite la taille des images */
   max-height: 80%;
-  /* Empêche les images de dépasser l'écran */
   border-radius: 15px;
   box-shadow: 0 20px 15px rgba(0, 0, 0, 0.1);
 }
@@ -129,6 +118,16 @@
   margin-right: 10%;
 }
 
+/* Styles spécifiques aux images du deuxième projet de base trop grandes */
+.project-images .second-project {
+  max-width: 50%;
+  /* Réduit la taille des images */
+  max-height: 50%;
+  /* Limite la hauteur */
+  margin: 0 auto;
+  /* Centre les images */
+}
+
 .play_button {
   padding: 0.7rem 1.2rem;
   border: none;
@@ -139,25 +138,14 @@
   border-radius: 10px;
   cursor: pointer;
   transition: all 0.3s ease;
+  width: 100%;
 }
 
 .play_button:hover {
   transform: scale(1.1);
-  /* Agrandit légèrement au survol */
   background-color: #eeb2a1;
-  /* Change la couleur */
   color: rgb(185, 72, 72);
   font-weight: bolder;
-}
-
-/* Styles spécifiques aux images du deuxième projet de base trop grandes */
-.project-images .second-project {
-  max-width: 50%;
-  /* Réduit la taille des images */
-  max-height: 50%;
-  /* Limite la hauteur */
-  margin: 0 auto;
-  /* Centre les images */
 }
 
 /* Animation de scroll */
@@ -183,4 +171,175 @@
 
 .scroll-to-top:hover {
   background-color: #eeb2a1;
+  color: black;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .play_button {
+    display: none;
+  }
+  .project-block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .project-content p {
+    font-size: 18px;
+    ;
+  }
+  .github_link {
+    margin-bottom: 1rem; /* Espacement entre les images et le lien */
+  }
+
+  .project-images img:nth-child(odd),
+  .project-images img:nth-child(even) {
+    order: 1;
+    justify-content: center;
+    width:100%;
+    margin: 0;
+  }
+
+  .project-images img {
+    max-width: 70%;
+    /* Taille réduite par défaut */
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+  }
+
+  /* Overlay (fond sombre derrière l'image agrandie) */
+  .overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 100;
+    display: none;
+  }
+
+  .overlay.visible {
+    display: block;
+  }
+
+  /* Image agrandie */
+  .enlarged-image {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 80vw;
+    max-height: 80vh;
+    z-index: 200;
+    /* L'image passe au premier plan */
+    border-radius: 10px;
+    border: 5px solid white;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+  }
+
+  /* Empêche l'overlay de cacher complètement l'image */
+  .project-images img.enlarged {
+    z-index: 200;
+  }
+
+  /* Animation */
+  .enlarged-image {
+    animation: fadeIn 0.3s ease-in-out;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translate(-50%, -50%) scale(0.8);
+    }
+
+    to {
+      opacity: 1;
+      transform: translate(-50%, -50%) scale(1);
+    }
+  }
+
+}
+
+
+@media (max-width: 812px) {
+  .project-content h2 {
+    font-size: 22px;
+  }
+
+  .project-content p {
+    font-size: 14px;
+    line-height: 1.8;
+  }
+
+  .project-images img {
+    max-width: 60%;
+    /* Réduction de la taille */
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+  }
+
+  /* Overlay (fond sombre derrière l'image agrandie) */
+  .overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 100;
+    display: none;
+  }
+
+  .overlay.visible {
+    display: block;
+  }
+
+  /* Image agrandie */
+  .enlarged-image {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 85vw;
+    max-height: 85vh;
+    z-index: 200;
+    /* L'image passe au premier plan */
+    border-radius: 10px;
+    border: 5px solid white;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+  }
+
+  /* Empêche l'overlay de cacher complètement l'image */
+  .project-images img.enlarged {
+    z-index: 200;
+  }
+
+  /* Animation */
+  .enlarged-image {
+    animation: fadeIn 0.3s ease-in-out;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translate(-50%, -50%) scale(0.8);
+    }
+
+    to {
+      opacity: 1;
+      transform: translate(-50%, -50%) scale(1.2);
+    }
+  }
+
+
+  .scroll-to-top {
+    bottom: 15px;
+    right: 15px;
+    padding: 8px 15px;
+    font-size: 1.2rem;
+  }
 }
