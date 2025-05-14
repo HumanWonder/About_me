@@ -88,7 +88,7 @@
 .carousel-image img {
     max-width: 95%;
     /* Augmente la taille de l'image dans son conteneur */
-    max-height: 450px;
+    max-height: 45vh;
     /* Augmente la hauteur sans dépasser */
     object-fit: contain;
     border-radius: 15px;
@@ -203,6 +203,59 @@
         cursor: pointer;
         transition: transform 0.3s ease-in-out;
     }
+
+    /* Overlay (fond sombre derrière l'image agrandie) */
+    .overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.6);
+        z-index: 100;
+        display: none;
+    }
+
+    .overlay.visible {
+        display: block;
+    }
+
+    /* Image agrandie */
+    .enlarged-image {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        max-width: 80vw;
+        max-height: 80vh;
+        z-index: 200;
+        /* L'image passe au premier plan */
+        border-radius: 10px;
+        border: 5px solid white;
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+    }
+
+    /* Empêche l'overlay de cacher complètement l'image */
+    .project-images img.enlarged {
+        z-index: 200;
+    }
+
+    /* Animation */
+    .enlarged-image {
+        animation: fadeIn 0.3s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+            transform: translate(-50%, -50%) scale(0.8);
+        }
+
+        to {
+            opacity: 1;
+            transform: translate(-50%, -50%) scale(1);
+        }
+    }
 }
 
 @media (max-width: 812px) {
@@ -223,6 +276,73 @@
 
     .carousel-image img {
         max-width: 60%;
+    }
+
+    .carousel-image figcaption {
+        font-size: 14px;
+        max-width: 100%;
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    /* Overlay (fond sombre derrière l'image agrandie) */
+    .overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.6);
+        z-index: 100;
+        display: none;
+    }
+
+    .overlay.visible {
+        display: block;
+    }
+
+    /* Image agrandie */
+    .enlarged-image {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        max-width: 85vw;
+        max-height: 85vh;
+        z-index: 200;
+        /* L'image passe au premier plan */
+        border-radius: 10px;
+        border: 5px solid white;
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+    }
+
+    /* Empêche l'overlay de cacher complètement l'image */
+    .project-images img.enlarged {
+        z-index: 200;
+    }
+
+    /* Animation */
+    .enlarged-image {
+        animation: fadeIn 0.3s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+            transform: translate(-50%, -50%) scale(0.8);
+        }
+
+        to {
+            opacity: 1;
+            transform: translate(-50%, -50%) scale(1.2);
+        }
+    }
+
+    .scroll-to-top {
+        bottom: 15px;
+        right: 15px;
+        padding: 8px 15px;
+        font-size: 1.2rem;
     }
 
     /* un peu plus étroit */

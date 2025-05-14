@@ -57,6 +57,12 @@ const HobbiesData = [
 const Hobbies = () => {
   useScrollAnimation("hobby-block");
 
+  const [enlargedImage, setEnlargedImage] = React.useState(null);
+
+  const handleImageClick = (image) => {
+    setEnlargedImage(image === enlargedImage ? null : image);
+  };
+
   const [isSecretRevealed, setSecretRevealed] = useState(false);
 
   const revealSecret = () => {
@@ -87,6 +93,10 @@ const Hobbies = () => {
 
   return (
     <div className="hobbies-container">
+      {/* Overlay pour fermer l'image */}
+      {enlargedImage && (
+        <div className={`overlay ${enlargedImage ? "visible" : ""}`} onClick={() => setEnlargedImage(null)} />
+      )}
       {HobbiesData.map((hobby, hobbyIndex) => (
         <div
           key={hobby.id}
@@ -100,7 +110,7 @@ const Hobbies = () => {
           {/* Carrousel d'images */}
           <div className="carousel">
             <button className="carousel-button" onClick={() => prevImage(hobbyIndex)}>
-              <img src={getArrow("left",hobbyIndex)} alt="Left_arrow"></img>
+              <img src={getArrow("left", hobbyIndex)} alt="Left_arrow"></img>
             </button>
 
             <div className="carousel-images">
@@ -108,6 +118,7 @@ const Hobbies = () => {
                 <img
                   src={hobby.images[imageIndexes[hobbyIndex]].src}
                   alt={`Hobby ${hobbyIndex}`}
+                  onClick={() => handleImageClick(hobby.images[imageIndexes[hobbyIndex]].src)}
                 />
                 <figcaption>{hobby.images[imageIndexes[hobbyIndex]].caption}</figcaption>
 
@@ -132,12 +143,17 @@ const Hobbies = () => {
             </div>
 
             <button className="carousel-button" onClick={() => nextImage(hobbyIndex)}>
-              <img src={getArrow("right",hobbyIndex)} alt="Right_arrow"></img>
-
+              <img src={getArrow("right", hobbyIndex)} alt="Right_arrow"></img>
             </button>
+
           </div>
+
         </div>
       ))}
+      {/* Image agrandie au premier plan */}
+      {enlargedImage && (
+        <img src={enlargedImage} alt="enlarged_img" className="enlarged-image" />
+      )}
       <button className="scroll-to-top" onClick={scrollToTop}>↑</button>
     </div>
   );

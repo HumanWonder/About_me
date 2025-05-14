@@ -114,7 +114,7 @@ const Projects = () => {
       ))}
       {/* Image agrandie au premier plan */}
       {enlargedImage && (
-        <img src={enlargedImage} alt="Agrandie" className="enlarged-image" />
+        <img src={enlargedImage} alt="enlarged_img" className="enlarged-image" />
       )}
       <button className="scroll-to-top" onClick={scrollToTop}>↑</button>
     </div>
